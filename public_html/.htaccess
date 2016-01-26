@@ -1,11 +1,3 @@
-# Set some environment variables depending on host
-SetEnv APPLICATION_ENV=default
-SetEnvIfNoCase Host domain\.dev APPLICATION_ENV=dev
-SetEnvIfNoCase Host domain.devdomain\.com APPLICATION_ENV=dev
-SetEnvIfNoCase Host domain.qadomain\.com APPLICATION_ENV=qa
-SetEnvIfNoCase Host domain\.com APPLICATION_ENV=live
-SetEnvIfNoCase Host www\.domain\.com APPLICATION_ENV=live
-
 <IfModule mod_rewrite.c>
     RewriteEngine On
     RewriteBase /
@@ -220,7 +212,6 @@ AddType text/xsl xsl
 
     #### Set the Creator
     Header set Created-By "George Bardis - george@bardis.info"
-    Header set Bardis-Version "1.0.0"
 </ifModule>
 
 #### IE

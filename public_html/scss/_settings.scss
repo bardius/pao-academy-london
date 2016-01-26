@@ -1,4 +1,4 @@
-// 
+//
 // FOUNDATION SETTINGS
 //
 
@@ -26,8 +26,10 @@ $rem-base: 16px;
 // $include-print-styles: true;
 // $include-html-global-classes: $include-html-classes;
 
+$image-path: "../images/site_assets/";
 
-// 
+
+//
 // GLOBAL PALLETE
 //
 
@@ -35,13 +37,15 @@ $rem-base: 16px;
 $body-bg: #eee;
 $body-font-color: #000;
 $body-font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-$alt-font-family: Verdana, Tahoma, Arial, sans-serif;
+$alt-font-family: "furoreregular", Verdana, Tahoma, Arial, sans-serif;
 $body-font-weight: normal;
 $body-font-style: normal;
 
 // We use these as default colors throughout
-$primary-color: #008CBA;
-$secondary-color: #e7e7e7;
+$main-green: #478c17;
+$dark-green: #0c6d28;
+$primary-color: $dark-green;
+$secondary-color: $main-green;
 $alert-color: #f04124;
 $success-color: #43AC6A;
 $white-color: #ffffff;
@@ -57,7 +61,7 @@ $dark-gray-color: #515151;
 // $shiny-edge-active-color: rgba(#000, .2);
 
 
-// 
+//
 // TYPOGRAPHY
 //
 
@@ -69,14 +73,14 @@ $dark-gray-color: #515151;
 // $default-float: left;
 
 // We use these to control header font styles
-$header-font-family: join("Verdana", $body-font-family) !default;
-$header-font-weight: 300 !default;
-$header-font-style: normal !default;
-$header-font-color: #222 !default;
-$header-line-height: 1.4 !default;
-$header-top-margin: .2rem !default;
-$header-bottom-margin: .5rem !default;
-$header-text-rendering: optimizeLegibility !default;
+$header-font-family: $alt-font-family;
+// $header-font-weight: 300 !default;
+// $header-font-style: normal !default;
+$header-font-color: $dark-green;
+// $header-line-height: 1.4 !default;
+$header-top-margin: 0;
+$header-bottom-margin: 1rem;
+// $header-text-rendering: optimizeLegibility !default;
 
 // We use these to control header font sizes
 $h1-font-size: rem-calc(44) !default;
@@ -87,11 +91,11 @@ $h5-font-size: rem-calc(18) !default;
 $h6-font-size: 1rem !default;
 
 // These control how subheaders are styled.
-$subheader-line-height: 1.4 !default;
-$subheader-font-color: lighten($header-font-color, 30%) !default;
-$subheader-font-weight: 300 !default;
-$subheader-top-margin: .2rem !default;
-$subheader-bottom-margin: .5rem !default;
+//$subheader-line-height: 1.4 !default;
+//$subheader-font-color: lighten($header-font-color, 30%) !default;
+//$subheader-font-weight: 300 !default;
+//$subheader-top-margin: .2rem !default;
+//$subheader-bottom-margin: .5rem !default;
 
 // We use these to style paragraphs
 $paragraph-font-family: inherit !default;
@@ -123,24 +127,24 @@ $definition-list-margin-bottom: rem-calc(12) !default;
 $font-smoothing: antialiased;
 
 
-// 
+//
 // GRID
 //
 
 // $include-html-grid-classes: $include-html-classes;
 
-$row-width: rem-calc(960);
-$column-gutter: rem-calc(20);
+$row-width: rem-calc(1024);
+$column-gutter: rem-calc(32);
 $total-columns: 12;
 
 // Media Query Ranges
-// $small-range: (0em, 40em);
-// $medium-range: (40.063em, 64em);
-// $large-range: (64.063em, 90em);
-// $xlarge-range: (90.063em, 120em);
-// $xxlarge-range: (120.063em);
+$small-range: (0em, 40em);
+$medium-range: (40.063em, 64em);
+$large-range: (64.063em, 90em);
+$xlarge-range: (90.063em, 120em);
+$xxlarge-range: (120.063em);
 
-// $screen: "only screen";
+$screen: "only screen";
 
 // $landscape: "#{$screen} and (orientation: landscape)";
 // $portrait: "#{$screen} and (orientation: portrait)";
@@ -148,6 +152,7 @@ $total-columns: 12;
 // $small-up: $screen;
 // $small-only: "#{$screen} and (max-width: #{upper-bound($small-range)})";
 
+$medium-down: "#{$screen} and (max-width:#{upper-bound($medium-range)})";
 // $medium-up: "#{$screen} and (min-width:#{lower-bound($medium-range)})";
 // $medium-only: "#{$screen} and (min-width:#{lower-bound($medium-range)}) and (max-width:#{upper-bound($medium-range)})";
 
@@ -563,63 +568,62 @@ $total-columns: 12;
 
 
 // Off-canvas
-
-// $tabbar-bg: #333;
-// $tabbar-height: rem-calc(45);
-// $tabbar-line-height: $tabbar-height;
-// $tabbar-color: #FFF;
-// $tabbar-middle-padding: 0 rem-calc(10);
+$tabbar-bg: $dark-green;
+$tabbar-height: rem-calc(45);
+$tabbar-line-height: $tabbar-height;
+$tabbar-color: #FFF;
+$tabbar-middle-padding: 0 rem-calc(10);
 
 // Off Canvas Divider Styles
-// $tabbar-right-section-border: solid 1px lighten($tabbar-bg, 10%);
-// $tabbar-left-section-border: solid 1px darken($tabbar-bg, 10%);
+$tabbar-right-section-border: solid 1px lighten($tabbar-bg, 10%);
+$tabbar-left-section-border: solid 1px darken($tabbar-bg, 10%);
 
 // Off Canvas Tab Bar Headers
-// $tabbar-header-color: #FFF;
-// $tabbar-header-weight: bold;
-// $tabbar-header-line-height: $tabbar-height;
-// $tabbar-header-margin: 0;
+$tabbar-header-color: #FFF;
+$tabbar-header-weight: bold;
+$tabbar-header-line-height: $tabbar-height;
+$tabbar-header-margin: 0;
 
 // Off Canvas Menu Variables
-// $off-canvas-width: 250px;
-// $off-canvas-bg: #333;
+$off-canvas-width: 250px;
+$off-canvas-bg: $dark-green;
 
 // Off Canvas Menu List Variables
-// $off-canvas-label-padding: 0.3rem rem-calc(15);
-// $off-canvas-label-color: #999;
-// $off-canvas-label-text-transform: uppercase;
-// $off-canvas-label-font-weight: bold;
-// $off-canvas-label-bg: #444;
-// $off-canvas-label-border-top: 1px solid lighten(#444, 10%);
-// $off-canvas-label-border-bottom: none;
-// $off-canvas-label-margin:0;
-// $off-canvas-link-padding: rem-calc(10, 15);
-// $off-canvas-link-color: rgba(#FFF, 0.7);
-// $off-canvas-link-border-bottom: 1px solid darken($off-canvas-bg, 5%);
+$off-canvas-label-padding: 0.3rem rem-calc(15);
+$off-canvas-label-color: $white-color;
+$off-canvas-label-text-transform: uppercase;
+$off-canvas-label-font-weight: bold;
+$off-canvas-label-bg: $dark-green;
+$off-canvas-label-border-top: 1px solid lighten($dark-green, 10%);
+$off-canvas-label-border-bottom: none;
+$off-canvas-label-margin:0;
+$off-canvas-link-padding: rem-calc(10, 15);
+$off-canvas-link-color: rgba(#FFF, 0.7);
+$off-canvas-link-border-bottom: 1px solid darken($off-canvas-bg, 5%);
 
 // Off Canvas Menu Icon Variables
-// $tabbar-menu-icon-color: #FFF;
-// $tabbar-menu-icon-hover: darken($tabbar-menu-icon-color, 30%);
+$tabbar-menu-icon-color: #FFF;
+$tabbar-menu-icon-hover: darken($tabbar-menu-icon-color, 30%);
 
-// $tabbar-menu-icon-text-indent: rem-calc(35);
-// $tabbar-menu-icon-width: $tabbar-height;
-// $tabbar-menu-icon-height: $tabbar-height;
-// $tabbar-menu-icon-line-height: rem-calc(33);
-// $tabbar-menu-icon-padding: 0;
+$tabbar-menu-icon-text-indent: rem-calc(35);
+$tabbar-menu-icon-width: $tabbar-height;
+$tabbar-menu-icon-height: $tabbar-height;
+$tabbar-menu-icon-line-height: rem-calc(33);
+$tabbar-menu-icon-padding: 0;
 
-// $tabbar-hamburger-icon-width: rem-calc(16);
-// $tabbar-hamburger-icon-left: rem-calc(13);
-// $tabbar-hamburger-icon-top: rem-calc(5);
+$tabbar-hamburger-icon-width: rem-calc(16);
+$tabbar-hamburger-icon-left: rem-calc(13);
+$tabbar-hamburger-icon-top: rem-calc(5);
 
 // Off Canvas Back-Link Overlay
-// $off-canvas-overlay-transition: background 300ms ease;
-// $off-canvas-overlay-cursor: pointer;
-// $off-canvas-overlay-box-shadow: -4px 0 4px rgba(#000, 0.5), 4px 0 4px rgba(#000, 0.5);
-// $off-canvas-overlay-background: rgba(#FFF, 0.2);
-// $off-canvas-overlay-background-hover: rgba(#FFF, 0.05);
+$off-canvas-overlay-transition: background 300ms ease;
+$off-canvas-overlay-cursor: pointer;
+$off-canvas-overlay-box-shadow: -4px 0 4px rgba(#000, 0.5), 4px 0 4px rgba(#000, 0.5);
+$off-canvas-overlay-background: rgba(#FFF, 0.2);
+$off-canvas-overlay-background-hover: rgba(#FFF, 0.05);
 
 // Transition Variabls
-// $menu-slide: "transform 500ms ease";
+$menu-slide: "transform 300ms ease";
 
 
 // Orbit
@@ -1022,65 +1026,66 @@ $total-columns: 12;
 // $include-html-top-bar-classes: $include-html-classes;
 
 // Background color for the top bar
-// $topbar-bg-color: #333;
-// $topbar-bg: $topbar-bg-color;
+$topbar-bg-color: $dark-green;
+$topbar-bg: $topbar-bg-color;
 
 // Height and margin
-// $topbar-height: 45px;
-// $topbar-margin-bottom: 0;
+$topbar-height: rem-calc(65);
+$topbar-margin-bottom: 0;
 
 // Control Input height for top bar
 
 // Controlling the styles for the title in the top bar
-// $topbar-title-weight: normal;
-// $topbar-title-font-size: rem-calc(17);
+$topbar-title-weight: normal;
+$topbar-title-font-size: rem-calc(18);
 
 // Style the top bar dropdown elements
-// $topbar-dropdown-bg: #333;
-// $topbar-dropdown-link-color: #fff;
-// $topbar-dropdown-link-bg: #333;
-// $topbar-dropdown-toggle-size: 5px;
-// $topbar-dropdown-toggle-color: #fff;
-// $topbar-dropdown-toggle-alpha: 0.4;
+$topbar-dropdown-bg: $dark-green;
+$topbar-dropdown-link-color: $white-color;
+$topbar-dropdown-link-bg: $main-green;
+$topbar-dropdown-toggle-size: 5px;
+$topbar-dropdown-toggle-color: $white-color;
+$topbar-dropdown-toggle-alpha: 0.4;
 
 // Set the link colors and styles for top-level nav
-// $topbar-link-color: #fff;
-// $topbar-link-color-hover: #fff;
-// $topbar-link-color-active: #fff;
-// $topbar-link-weight: normal;
-$topbar-link-font-size: rem-calc(16);
-// $topbar-link-hover-lightness: -10%; // Darken by 10%
-// $topbar-link-bg-hover: #272727  ;
-// $topbar-link-bg-active: $primary-color;
-// $topbar-link-bg-active-hover: darken($primary-color, 5%);
-// $topbar-link-font-family: $body-font-family;
+$topbar-link-color: $white-color;
+$topbar-link-color-hover: $white-color;
+$topbar-link-color-active: $white-color;
+$topbar-link-weight: normal;
+$topbar-link-font-size: rem-calc(14);
+$topbar-link-hover-lightness: -10%; // Darken by 10%
+$topbar-link-bg-hover: darken($dark-green, 5%);
+$topbar-link-bg-active: $main-green;
+$topbar-link-bg-active-hover: $main-green;
+$topbar-link-font-family: $alt-font-family;
 
-// $topbar-button-font-size: 0.75rem;
+$topbar-button-font-size: 0.75rem;
 
-// $topbar-dropdown-label-color: #777;
-// $topbar-dropdown-label-text-transform: uppercase;
-// $topbar-dropdown-label-font-weight: bold;
-// $topbar-dropdown-label-font-size: rem-calc(10);
-// $topbar-dropdown-label-bg: #333;
+$topbar-dropdown-label-color: $white-color;
+$topbar-dropdown-label-text-transform: uppercase;
+$topbar-dropdown-label-font-weight: bold;
+$topbar-dropdown-label-font-size: rem-calc(14);
+$topbar-dropdown-label-bg: $dark-green;
 
 // Top menu icon styles
-// $topbar-menu-link-transform: uppercase;
-// $topbar-menu-link-font-size: rem-calc(13);
-// $topbar-menu-link-weight: bold;
-// $topbar-menu-link-color: #fff;
-// $topbar-menu-icon-color: #fff;
-// $topbar-menu-link-color-toggled: #888;
-// $topbar-menu-icon-color-toggled: #888;
+$topbar-menu-link-transform: uppercase;
+$topbar-menu-link-font-size: rem-calc(14);
+$topbar-menu-link-weight: bold;
+$topbar-menu-link-color: $white-color;
+$topbar-menu-icon-color: $white-color;
+$topbar-menu-link-color-toggled: $white-color;
+$topbar-menu-icon-color-toggled: $white-color;
 
 // Transitions and breakpoint styles
-// $topbar-transition-speed: 300ms;
+$topbar-transition-speed: 300ms;
+
 // Using rem-calc for the below breakpoint causes issues with top bar
 // $topbar-breakpoint: #{upper-bound($medium-range)}; // Change to 9999px for always mobile layout
 // $topbar-media-query: "only screen and (min-width: #{upper-bound($medium-range)})";
 
 // Divider Styles
-// $topbar-divider-border-bottom: solid 1px lighten($topbar-bg-color, 10%);
-// $topbar-divider-border-top: solid 1px darken($topbar-bg-color, 10%);
+$topbar-divider-border-bottom: solid 1px lighten($topbar-bg-color, 10%);
+$topbar-divider-border-top: solid 1px darken($topbar-bg-color, 10%);
 
 // Sticky Class
 // $topbar-sticky-class: ".sticky";

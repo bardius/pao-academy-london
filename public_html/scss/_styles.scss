@@ -2,20 +2,21 @@
    Foundation Styles Overrides
 ----------------------------------------- */
 
-header, nav, article, footer, address, 
+header, nav, article, footer, address,
 section, aside, hgroup, figure{
 	display: block;
 }
 
-body, div, dl, dt, dd, ul, ol, li, pre, 
+body, div, dl, dt, dd, ul, ol, li, pre,
 form, fieldset, p, blockquote, th, td {
 }
 
-h1, h2, h3, h4, h5, h6{
+h1, h2, h3, h4, h5, h6 {
+    letter-spacing: 1px;
 }
-  
-iframe { 
-    left: 0; 
+
+iframe {
+    left: 0;
     border: none!important;
 }
 
@@ -25,7 +26,7 @@ a{
 a:hover, a:focus{
 }
 
-.inv{ 
+.inv{
     border: 0;
     clip: rect(0 0 0 0);
     height: 1px;
@@ -41,24 +42,24 @@ a:hover, a:focus{
 	visibility: hidden!important;
 }
 
-img{ 
+img{
     border: none;
 }
-    
-strong { 
+
+strong {
     font-size: inherit;
     line-height: inherit;
     font-weight: bold;
 }
-    
-table { 
-    font-size: inherit; 
+
+table {
+    font-size: inherit;
     float: left;
     border-spacing: 0!important;
     border-collapse: collapse!important;
 }
-    
-td{ 
+
+td{
     text-align: center;
 	padding: 5px;
 }
@@ -75,6 +76,19 @@ td{
     display: none;
 }
 
+.no-padding {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.contain-to-grid {
+    background: none transparent;
+
+    &.fixed {
+        background-color: $white-color;
+    }
+}
+
 /*-------------------------------------------
     Website Body / Backgrounds
   -----------------------------------------*/
@@ -82,6 +96,9 @@ td{
 body{
 	min-height: 100%;
 	width: 100%;
+    background: url("../images/site_assets/body-bg.jpg") 50% 60px no-repeat $dark-green;
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 .superWrapper{
@@ -100,6 +117,18 @@ body{
 	min-height: 300px;
 }
 
+.contents-row {
+    background-color: $white-color;
+    background-color: rgba(255, 255, 255, 0.75);
+    padding-top: rem-calc(20);
+    padding-bottom: rem-calc(20);
+}
+
+.spaced-row{
+    margin-top: rem-calc(30);
+    margin-bottom: rem-calc(30);
+}
+
 
 /*-------------------------------------------
     Website Logo / Header
@@ -108,27 +137,66 @@ body{
 header{
     overflow: visible;
     position: relative;
-    background-color: #CCC;
+    background-color: $white-color;
+    margin-bottom: rem-calc(60);
+
+    &::before {
+        background-color: $dark-green;
+        content: "";
+        display: block;
+        height: 7px;
+        position: absolute;
+        width: 100%;
+        z-index: 98;
+        top: 0;
+        left: 0;
+    }
+
+    &::after {
+        background: $dark-green none repeat scroll 0 0;
+        content: "";
+        display: block;
+        height: $topbar-height;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 50%;
+        z-index: 96;
+    }
+
+    .header {
+        position: relative;
+        z-index: 97;
+    }
 
 	#logo{
 		position: relative;
-		z-index: 98;
+		z-index: 97;
 
 		.logo{
 			float: left;
 			display: block;
-			margin: 0;    
+			margin: 0;
+            position: relative;
+
+            &::after {
+                border-right: $topbar-height/2 solid transparent;
+                border-bottom: $topbar-height solid $white-color;
+                content: "";
+                display: block;
+                height: $topbar-height;
+                width: $topbar-height/2;
+                position: absolute;
+                top: 0;
+                right: -$topbar-height/2;
+            }
 		}
 
 		a{
 			display: block;
-			width: 100%;
-			-webkit-animation-duration: 1s!important;
-			animation-duration: 1s!important;
+			width: 144px;
 
 			&:hover{
-				-webkit-animation-name: pulse;
-				animation-name: pulse;
 			}
 
 			img{
@@ -137,23 +205,55 @@ header{
 			}
 		}
 	}
+
+    h3 {
+        font-size: rem-calc(16);
+        margin-top: rem-calc(28);
+        text-align: right;
+        padding: 0 rem-calc(20);
+    }
 }
 
 /*-------------------------------------------
     Navigation Menu Styles
   -----------------------------------------*/
 
-.top-bar{
-	margin:10px 0;
+.top-bar {
+	margin: 0;
+
+    .menu {
+
+        li{
+            border-left: 1px solid darken($dark-green, 5%);
+
+            &:first-child{
+                border: none;
+            }
+        }
+
+        a {
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all $topbar-transition-speed linear 0s;
+        }
+    }
+
+    &.expanded {
+        background-color: $dark-green;
+    }
+
+    .menu-icon {
+        font-family: $alt-font-family;
+    }
 }
 
 /*-------------------------------------------
     Orbit Slideshow
   -----------------------------------------*/
 
-.bannerSlide{	
+.bannerSlide{
 	z-index: 1;
-	
+
 	&.active{
 		z-index: 2;
 	}
@@ -163,17 +263,17 @@ header{
     Homepage Page styles
   -----------------------------------------*/
 
-.homepageItem{	
+.homepageItem{
 	margin: 10px 0;
-	
+
 		img{
 			width: 100%;
 		}
 }
- 
+
 /*-------------------------------------------
     Generic Page styles
-  -----------------------------------------*/ 
+  -----------------------------------------*/
 
 .readMoreImage {
 	width: 100%;
@@ -185,16 +285,16 @@ header{
 
 .paginationHolder {
 	margin-top: rem-calc(30);
-	
+
 	ul{
 		text-align: center;
-		
+
 		li{
 			float: none;
 			display: inline-block;
 			height: auto;
 			margin: 4px 0;
-			
+
 			a {
 				color: $white-color;
 				font-size: rem-calc(12);
@@ -202,13 +302,13 @@ header{
 				line-height: 1.4;
 				font-family: $alt-font-family;
 				background: none #ccc;
-				
+
 				&:hover, &:focus {
 					color: $white-color;
-					background: none $primary-color;				
+					background: none $primary-color;
 				}
-			}		
-		
+			}
+
 			&.current{
 
 				a{
@@ -218,20 +318,20 @@ header{
 
 					&:hover, &:focus {
 						color: $white-color;
-						background: none $dark-gray-color;				
+						background: none $dark-gray-color;
 					}
 				}
 			}
 		}
 	}
 }
- 
+
 /* -----------------------------------------
    Filter form styles
 ----------------------------------------- */
 
 #filterResultsFormHolder{
-    margin-top: 28px;     
+    margin-top: 28px;
     position: relative;
     padding-bottom: 68px;
 }
@@ -301,9 +401,9 @@ header{
 
 #filterResultsForm #filterResultsBtn:hover{
     cursor: pointer;
-    background: url(../images/site_assets/indexSlideArrow.png) no-repeat 80% 50% #011A48;    
+    background: url(../images/site_assets/indexSlideArrow.png) no-repeat 80% 50% #011A48;
 }
-    
+
 #filterResultsForm .checkAllBox label{
     font-size: 0.9285em;
     font-size: 0.9285rem;
@@ -312,7 +412,7 @@ header{
     text-transform: none;
     color: #052763;
     cursor: pointer;
-    margin-bottom:0;    
+    margin-bottom:0;
 }
 
 .customCheckBox input{
@@ -324,7 +424,7 @@ header{
     float: left;
     clear: left;
 }
- 
+
 .customCheckBox input + label {
     padding: 3px 3px 3px 22px;
     padding: 3px 3px 3px 1.6rem;
@@ -341,7 +441,7 @@ header{
     float: left;
     clear: none;
 }
- 
+
 .customCheckBox input + label:after {
     content: '\00a0';
     font-size: 14px;
@@ -377,13 +477,13 @@ header{
 }
 
 .filterResultsFormBtns {
-	
+
 	.customCheckBox {
-		
+
 		input{
 			display: none;
 		}
-		
+
 		input + label {
 			display: inline-block;
 			position: relative;
@@ -393,9 +493,9 @@ header{
 			margin: 0;
 			color: $secondary-color;
 			text-transform: none;
-			
-			transition: all 300ms ease-in-out;	
-			
+
+			transition: all 300ms ease-in-out;
+
 			&:after {
 				content: '\00a0';
 				font-size: rem-calc(20);
@@ -403,10 +503,10 @@ header{
 				line-height: 1.2;
 				padding-left: 12px;
 			}
-			
+
 			&:hover {
 				color: $dark-gray-color;
-				
+
 				&:after {
 					content: '\2716';
 				}
@@ -435,7 +535,7 @@ header{
    Google Map
 ----------------------------------------- */
 
-#map_canvas { 
+#map_canvas {
     width: 95%;
     height: 100%;
     float: left;
@@ -444,88 +544,145 @@ header{
 /* -----------------------------------------
    Footer Styles
 ----------------------------------------- */
+footer {
+    background-color: $dark-green;
+    text-align: center;
+    font-size: 1.2rem;
+    padding: 4rem;
+    margin-top: rem-calc(60);
 
-footer{
-	background: #CCC;
-	
-	&.row{
-		margin-top: rem-calc(30);
-	}	
+    .inline-list a {
+        display: inline-block;
+        width: 2rem;
+        height: 2rem;
+        background-color: darken($dark-green, 5%);
+        border-radius: 2px;
+        font-size: 1.5rem;
+        color: $white-color;
+        text-align: center;
+        line-height: 35px;
+        margin: 0 3px 0 0;
+    }
+
+    .contact {
+        list-style-type: none;
+        margin: 0;
+        text-align: left;
+        color: #fff;
+
+        li {
+            margin-bottom: 2rem;
+
+            p {
+                padding-left: 5rem;
+            }
+        }
+
+        i {
+            position: absolute;
+            background-color: darken($dark-green, 5%);
+            color: #fff;
+            font-size: 2rem;
+            border-radius: 50%;
+            line-height: 1;
+            margin: 0 0 0 -4rem;
+            vertical-align: middle;
+            padding: .25em .45em;
+        }
+
+        > i {
+            margin-right: 1rem;
+        }
+
+        a {
+            color: $white-color;
+
+            &:hover {
+                color: $white-color;
+                text-decoration: underline;
+            }
+        }
+    }
+
+    .copywrite {
+        font-size: 0.875rem;
+        margin: 0 0 1rem 0;
+    }
+
+    .about {
+        font-size: 0.875rem;
+        margin: 0 0 1rem 0;
+    }
+
+    .footer-links a {
+        list-style: none;
+        font-weight: normal;
+        color: $white-color;
+        padding: 3rem 0 2rem;
+        margin: 0;
+        font-size: 0.875rem;
+
+        &::after {
+            content: "\2022";
+            padding: 0 0.2rem 0 0.4rem;
+        }
+
+        &:last-child::after {
+            content: "";
+            padding: 0 0.4rem 0 0.8rem;
+        }
+    }
+
+    .social {
+        text-align: left;
+        margin: 0;
+    }
+
+    .logo {
+        color: $white-color;
+    }
 }
 
 /* ---------------------------------------------------
-   Media Queries for mobile / tablets responsivenes
+   Media Queries for mobile / tablets responsiveness
 ----------------------------------------------------- */
 
-@media only screen and (device-width: 320px) and (orientation:portrait){
-    
+@media #{$small-up} {
     html {
-        font-size: 10px!important;
+        font-size: 12px;
     }
 }
 
-@media only screen and (device-width: 320px) and (orientation:landscape){
-    
-    html {
-        font-size: 11px!important;
-    }
-   
+@media #{$small-only} {
 }
 
-@media only screen and (max-width: 380px){
-    
-    html {
-        font-size: 10px!important;
-    }
-}
+@media #{$medium-down} {
 
-@media only screen and (max-width: 498px){
-    
-    html {
-        font-size: 10px!important;
+    header {
+
+        &:before,
+        &:after {
+            display: none;
+        }
     }
 }
 
-@media only screen and (max-width: 766px) and (min-width: 499px){
-    
+@media #{$medium-up} {
     html {
-        font-size: 12px!important;
+        font-size: 14px;
     }
 }
 
+@media #{$medium-only} {
+}
 
-@media only screen and (max-width: 767px){
-    
+@media #{$large-up} {
     html {
-        font-size: 13px!important;
+        font-size: $rem-base;
     }
 }
 
-@media only screen and (device-width:768px) and (orientation:portrait){
-    
-    html {
-        font-size: 12px!important;
-    }
-}
-
-@media only screen and (device-width:768px) and (orientation:landscape){
-    
-    html {
-        font-size: 13px!important;
-    }
-}
-
-@media only screen and (max-width: 959px) and (min-width: 768px){
-    
-    html {
-        font-size: 13px!important;
-    }
-}
-
-@media only screen and (min-width: 960px) {
-    html {
-        font-size: 14px!important;
-    }
+@media #{$large-only} {
 }
 
 @media print {

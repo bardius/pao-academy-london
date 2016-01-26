@@ -1,21 +1,22 @@
-                        
+
                         <!--  ==============  -->
                         <!--  === Header ===  -->
                         <!--  ==============  -->
                         <header>
                             <div class="row header">
-                                <div id="logo" class="columns small-6 medium-4 large-4">
-                                    <h1 class="logo">
-                                        <a href="/" title="{{ page.siteName }}">
-                                            <img src="/images/site_assets/siteLogo.png" alt="{{ page.siteName }}" />
-                                            <span class="inv">{{ page.title }}</span>
-                                        </a>
-                                    </h1>
-                                </div>					
-                                <div class="columns small-12 large-12">
+                                <div class="contain-to-grid sticky">
+                                    <div id="logo">
+                                        <h1 class="logo">
+                                            <a href="/" title="{{ page.siteName }}">
+                                                <img src="/images/site_assets/site-logo.png" alt="{{ page.siteName }}" />
+                                                <span class="inv">{{ page.title }}</span>
+                                            </a>
+                                        </h1>
+                                    </div>
                                     {{> nav }}
+                                    <h3>The Official website of Panathinaikos Basketball Academy London</h3>
                                 </div>
                             </div>
                         </header>
-                        
+
                         {{> offCanvas-nav }}

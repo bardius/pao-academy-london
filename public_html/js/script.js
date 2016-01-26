@@ -58,6 +58,7 @@
         init: function() {
             $(window).smartresize(function() {
                 notifications.sendNotification(notifications.WINDOW_RESIZE);
+                $(document).foundation('reflow');
             });
         }
     };

@@ -1,8 +1,16 @@
+@charset "UTF-8";
+
+/* Custom Fonts */
+@import "fonts";
+
 /* Override the default foundation framework global settings */
 @import "settings";
 
 /* Load the full foundation framework */
 @import "foundation";
+
+/* Foundation Icons */
+@import "foundation-icons";
 
 // Or selectively include components
 // @import
