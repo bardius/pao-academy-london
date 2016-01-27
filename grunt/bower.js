@@ -12,8 +12,11 @@ module.exports = {
      */
     install: {
         options: {
-            targetDir: "./public_html/bower_components",
-            install: true
+            targetDir: "./public_html/bower_components", //<%= config.bower.path %>,
+            install: true,
+            verbose: false,
+            cleanTargetDir: false,
+            cleanBowerDir: false
         }
     }
 };

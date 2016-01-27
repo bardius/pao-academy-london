@@ -20,6 +20,11 @@ module.exports = function (grunt) {
                  * Choose javascript release filename
                  * Choose javascript release location
                  * Choose javascript files to be uglified
+                 * Choose images location
+                 * Choose css release location
+                 * Choose scss files to be compiled
+                 * Choose foundation scss location
+                 * Choose bower components location
                  */
                 js: {
                     // <%=config.js.releaseDir%>
@@ -110,13 +115,13 @@ module.exports = function (grunt) {
      * grunt serve  : watch js & scss and run a local server
      * grunt generate  : run assemble, uglify and sass
      * grunt travis :  run bower install, uglify and sass
-     * grunt jasmine :  run bower install, uglify and sass
+     * grunt runtests :  run jasmine
      ========================================================================== */
 
     /**
      * GRUNT
      * Default task
-     * run sass, autoprefixer, csssplit, uglify
+     * run sass, autoprefixer, csssplit, jshint, uglify
      */
     // Default task
     grunt.registerTask('default', [
@@ -126,8 +131,8 @@ module.exports = function (grunt) {
 
     /**
      * GRUNT JSDEV
-     * A task for development
-     * run sass, autoprefixer, csssplit, uglify
+     * A task for JavaScript development
+     * run jshint, uglify
      */
     grunt.registerTask('jsdev', [
         //'jshint',
@@ -138,12 +143,12 @@ module.exports = function (grunt) {
     /**
      * GRUNT DEV
      * A task for development
-     * run sass, autoprefixer, csssplit, uglify
+     * run sass, autoprefixer, csssplit, jshint, uglify,
      */
     grunt.registerTask('dev', [
         'jsdev',
         'sass:release',
-        'postcss:release',
+        'autoprefixer:release',
         'csssplit:release'
     ]);
 
@@ -151,12 +156,12 @@ module.exports = function (grunt) {
     /**
      * GRUNT DEPLOY
      * A task for your production environment
-     * run sass, autoprefixer, combine_mq, csssplit, csso, uglify
+     * run sass, autoprefixer, combine_mq, csssplit, csso, uglify,
      */
     grunt.registerTask('deploy', [
         'uglify:production',
         'sass:production',
-        'postcss:release',
+        'autoprefixer:release',
         'combine_mq:release',
         'csssplit:release',
         'csso:release'
@@ -194,6 +199,16 @@ module.exports = function (grunt) {
         'generate',
         'connect',
         'watch'
+    ]);
+
+
+    /**
+     * GRUNT RUNTESTS
+     * A task for testing
+     * run jasmine
+     */
+    grunt.registerTask('runtests', [
+        'jasmine'
     ]);
 
 

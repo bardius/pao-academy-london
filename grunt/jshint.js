@@ -6,7 +6,11 @@
 // -----------------------------
 
 module.exports = {
-    all: '<%=config.js.scriptFileList%>',
+    files: [
+        'gruntFile.js',
+        '<%=config.js.scriptFileList%>',
+        '!public_html/bower_components/**/*.js'
+    ],
     options: {
         jshintrc: '.jshintrc'
     }
