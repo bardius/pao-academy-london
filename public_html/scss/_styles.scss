@@ -89,14 +89,19 @@ td{
     }
 }
 
+.button {
+    letter-spacing: 1px;
+    font-family: $alt-font-family;
+}
+
 /*-------------------------------------------
     Website Body / Backgrounds
   -----------------------------------------*/
 
-body{
+body {
 	min-height: 100%;
 	width: 100%;
-    background: url("../images/site_assets/body-bg.jpg") 50% 60px no-repeat $dark-green;
+    background: url("../images/site_assets/body-bg.jpg") 50% 60px no-repeat $black-color;
     background-size: cover;
     background-attachment: fixed;
 }
@@ -145,7 +150,7 @@ header{
         content: "";
         display: block;
         height: 7px;
-        position: absolute;
+        position: fixed;
         width: 100%;
         z-index: 98;
         top: 0;
@@ -170,8 +175,10 @@ header{
     }
 
 	#logo{
+        float: left;
 		position: relative;
 		z-index: 97;
+        max-width: 25%;
 
 		.logo{
 			float: left;
@@ -194,23 +201,68 @@ header{
 
 		a{
 			display: block;
+            background-color: $white-color;
 			width: 144px;
+            max-width: 100%;
+            overflow: hidden;
+            transition: all $topbar-transition-speed linear 0s;
 
 			&:hover{
+
+                img{
+                    transform: rotate(-8deg);
+                }
 			}
 
 			img{
 				display: block;
 				max-width: 100%;
+                transition: all $topbar-transition-speed linear 0s;
 			}
 		}
 	}
 
+    .fixed {
+
+        &::after {
+            background: $dark-green none repeat scroll 0 0;
+            content: "";
+            display: block;
+            height: $topbar-height;
+            position: fixed;
+            right: 0;
+            top: 0;
+            width: 50%;
+            z-index: 96;
+        }
+
+        #logo {
+
+            a {
+                margin-top: 3px;
+                width: 104px;
+            }
+        }
+
+        .top-bar-section,
+        .title-area {
+            z-index: 97;
+        }
+
+        h3 {
+            font-size: rem-calc(14);
+            padding: rem-calc(14) rem-calc(20);
+        }
+    }
+
     h3 {
+        display: block;
+        clear: right;
         font-size: rem-calc(16);
-        margin-top: rem-calc(28);
+        padding: rem-calc(28) rem-calc(20);
+        margin: 0;
+        max-width: 75%;
         text-align: right;
-        padding: 0 rem-calc(20);
     }
 }
 
@@ -220,6 +272,12 @@ header{
 
 .top-bar {
 	margin: 0;
+    overflow: visible!important;
+
+    &.expanded {
+        background-color: transparent;
+        height: $topbar-height!important;
+    }
 
     .menu {
 
@@ -244,6 +302,11 @@ header{
 
     .menu-icon {
         font-family: $alt-font-family;
+        letter-spacing: 1px;
+
+        span {
+            padding-right: rem-calc(8);
+        }
     }
 }
 
@@ -648,26 +711,41 @@ footer {
 ----------------------------------------------------- */
 
 @media #{$small-up} {
+
     html {
         font-size: 12px;
     }
 }
 
 @media #{$small-only} {
-}
 
-@media #{$medium-down} {
+    header{
 
-    header {
+        #logo,
+        .fixed #logo {
 
-        &:before,
-        &:after {
-            display: none;
+            a{
+                margin-top: 3px;
+                width: 92px;
+            }
+        }
+
+        h3 {
+            font-size: rem-calc(14);
+            padding: rem-calc(14) rem-calc(20);
+
+            span {
+                display: none;
+            }
         }
     }
 }
 
+@media #{$medium-down} {
+}
+
 @media #{$medium-up} {
+
     html {
         font-size: 14px;
     }
@@ -677,6 +755,7 @@ footer {
 }
 
 @media #{$large-up} {
+
     html {
         font-size: $rem-base;
     }
@@ -686,6 +765,7 @@ footer {
 }
 
 @media print {
+
     div:not(.reveal-modal) {
         display: inherit !important;
     }

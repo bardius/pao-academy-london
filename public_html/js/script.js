@@ -37,6 +37,12 @@
                 offcanvas: {
                     open_method: 'move', // Sets method in which offcanvas opens, can also be 'overlap'
                     close_on_click: true
+                },
+                equalizer : {
+                    // Specify if Equalizer should make elements equal height once they become stacked.
+                    equalize_on_stack: false,
+                    // Allow equalizer to resize hidden elements
+                    act_on_hidden_el: false
                 }
             });
         }
@@ -58,7 +64,8 @@
         init: function() {
             $(window).smartresize(function() {
                 notifications.sendNotification(notifications.WINDOW_RESIZE);
-                $(document).foundation('reflow');
+                //$(document).foundation('reflow');
+                //BARDIS.foundation.init();
             });
         }
     };
