@@ -92,6 +92,19 @@ td{
 .button {
     letter-spacing: 1px;
     font-family: $alt-font-family;
+
+    &.hollow {
+        background-color: $white-color;
+        color: $dark-green;
+        border: 1px solid $dark-green;
+        border-radius: 4px;
+
+        &:hover,
+        &:focus {
+            color: $white-color;
+            background-color: $dark-green;
+        }
+    }
 }
 
 /*-------------------------------------------
@@ -101,9 +114,7 @@ td{
 body {
 	min-height: 100%;
 	width: 100%;
-    background: url("../images/site_assets/body-bg.jpg") 50% 60px no-repeat $black-color;
-    background-size: cover;
-    background-attachment: fixed;
+    background: url("../images/site_assets/body-bg-mobile.jpg") 0 0 repeat $black-color;
 }
 
 .superWrapper{
@@ -266,6 +277,17 @@ header{
     }
 }
 
+.f-topbar-fixed {
+
+    header {
+        margin-bottom: rem-calc(160);
+
+        &::after {
+            display: none;
+        }
+    }
+}
+
 /*-------------------------------------------
     Navigation Menu Styles
   -----------------------------------------*/
@@ -326,20 +348,52 @@ header{
     Homepage Page styles
   -----------------------------------------*/
 
-.homepageItem{
-	margin: 10px 0;
+.featured-content-row {
 
-		img{
-			width: 100%;
-		}
+    .slider-row {
+        background-color: $white-color;
+        padding: $column-gutter 0;
+    }
+
+    .slider-navigation {
+        padding: 0;
+        margin: 0;
+        position: relative;
+        z-index: 90;
+
+        dd {
+            position: relative;
+            margin: 0;
+
+            &:first-child{
+                border: none;
+            }
+
+            a {
+                margin: 0;
+                color: $white-color;
+
+                &.active,
+                &:hover {
+                    background-color: darken($dark-green, 5%);
+                }
+            }
+        }
+    }
 }
 
 /*-------------------------------------------
     Generic Page styles
   -----------------------------------------*/
 
-.readMoreImage {
-	width: 100%;
+.contents-row {
+
+    .panel {
+
+        img {
+            width: 100%;
+        }
+    }
 }
 
 /* -----------------------------------------
@@ -376,202 +430,13 @@ header{
 
 				a{
 					color: $white-color;
-					background: none $dark-gray-color;
+					background: none $main-green;
 					font-weight: normal;
 
 					&:hover, &:focus {
 						color: $white-color;
 						background: none $dark-gray-color;
 					}
-				}
-			}
-		}
-	}
-}
-
-/* -----------------------------------------
-   Filter form styles
------------------------------------------ */
-
-#filterResultsFormHolder{
-    margin-top: 28px;
-    position: relative;
-    padding-bottom: 68px;
-}
-
-#filterResultsFormHolder h3{
-    display: none;
-}
-
-#filterResultsFormHolder form{
-    margin: 0;
-}
-
-#filterResultsFormHolder .control-group{
-    width: 100%;
-    float: left;
-}
-
-#filterResultsFormHolder label{
-    font-size: 16px;
-    line-height: 20px;
-    margin-bottom:12px;
-    text-transform: uppercase;
-    color: #052763;
-    cursor: default;
-}
-
-#filterResultsFormHolder .controls label{
-    font-size: 0.9285em;
-    font-size: 0.9285rem;
-    line-height: 1.285em;
-    line-height: 1.285rem;
-    text-transform: none;
-    color: #052763;
-    cursor: pointer;
-    margin-bottom:0;
-}
-
-#filterResultsForm .formBtns {
-    float: none;
-    position: absolute;
-    bottom: 22px;
-    right: 0;
-    width: 25%;
-}
-
-#filterResultsForm .formBtns .checkAllBox{
-    float: left;
-    margin-top: 4px;
-}
-
-#filterResultsForm #filterResultsBtn{
-    float: right;
-    background: url(../images/site_assets/indexSlideArrow.png) no-repeat 80% 50% #0A3982;
-    border-radius: 16px 16px 16px 16px;
-    color: #FFFFFF;
-    display: block;
-    font-family: "futuramedium", "Helvetica", Tahoma, Arial, sans-serif;
-    font-size: 16px;
-    height: 32px;
-    line-height: 32px;
-    padding: 0 34px 0 16px;
-    text-align: left;
-    text-transform: uppercase;
-    border: none;
-    font-weight:normal!important;
-}
-
-#filterResultsForm #filterResultsBtn:hover{
-    cursor: pointer;
-    background: url(../images/site_assets/indexSlideArrow.png) no-repeat 80% 50% #011A48;
-}
-
-#filterResultsForm .checkAllBox label{
-    font-size: 0.9285em;
-    font-size: 0.9285rem;
-    line-height: 1.285em;
-    line-height: 1.285rem;
-    text-transform: none;
-    color: #052763;
-    cursor: pointer;
-    margin-bottom:0;
-}
-
-.customCheckBox input{
-    display: none;
-}
-
-.lt-ie9 #filterResultsForm .customCheckBox input{
-    display: inline-block;
-    float: left;
-    clear: left;
-}
-
-.customCheckBox input + label {
-    padding: 3px 3px 3px 22px;
-    padding: 3px 3px 3px 1.6rem;
-    display: inline-block;
-    position: relative;
-    line-height: 18px;
-    line-height: 1.285rem;
-    clear: left;
-    float: left;
-}
-
-.lt-ie9 .customCheckBox input + label{
-    display: inline-block;
-    float: left;
-    clear: none;
-}
-
-.customCheckBox input + label:after {
-    content: '\00a0';
-    font-size: 14px;
-    font-size: 1rem;
-    position: absolute;
-    top: 3px;
-    left: 0px;
-    color: #99a1a7;
-    box-shadow: 0 1px 2px rgba(0,0,0,0), inset 0px 1px 3px rgba(13,59,131,0);
-    border: none;
-    border-radius: 9px;
-    border-radius: 0.6425rem;
-    background-color: #FFF;
-    width: 18px;
-    height: 18px;
-    line-height: 18px;
-    width: 1.285rem;
-    height: 1.285rem;
-    line-height: 1.285rem;
-    text-align: center;
-}
-
-.lt-ie9 .customCheckBox input + label:after{
-    display: none;
-}
-
-.customCheckBox input:checked + label:after {
-	content: '\2714';
-	color: #FFF;
-	box-shadow: 0 1px 2px rgba(0,0,0,0), inset 0px -15px 10px -12px rgba(0,0,0,0), inset 15px 10px -12px rgba(13,59,131,0);
-	border: none;
-	background-color: #052763;
-}
-
-.filterResultsFormBtns {
-
-	.customCheckBox {
-
-		input{
-			display: none;
-		}
-
-		input + label {
-			display: inline-block;
-			position: relative;
-			line-height: 1.2;
-			font-size: rem-calc(24);
-			cursor: pointer;
-			margin: 0;
-			color: $secondary-color;
-			text-transform: none;
-
-			transition: all 300ms ease-in-out;
-
-			&:after {
-				content: '\00a0';
-				font-size: rem-calc(20);
-				color: $dark-gray-color;
-				line-height: 1.2;
-				padding-left: 12px;
-			}
-
-			&:hover {
-				color: $dark-gray-color;
-
-				&:after {
-					content: '\2716';
 				}
 			}
 		}
@@ -638,6 +503,7 @@ footer {
 
             p {
                 padding-left: 5rem;
+                margin-bottom: 8px;
             }
         }
 
@@ -659,9 +525,11 @@ footer {
 
         a {
             color: $white-color;
+            transition: all $topbar-transition-speed linear 0s;
 
             &:hover {
                 color: $white-color;
+                background-color: darken($dark-green, 10%);
                 text-decoration: underline;
             }
         }
@@ -670,11 +538,13 @@ footer {
     .copywrite {
         font-size: 0.875rem;
         margin: 0 0 1rem 0;
+        color: $white-color;
     }
 
     .about {
         font-size: 0.875rem;
         margin: 0 0 1rem 0;
+        color: $white-color;
     }
 
     .footer-links a {
@@ -684,6 +554,11 @@ footer {
         padding: 3rem 0 2rem;
         margin: 0;
         font-size: 0.875rem;
+
+        &:hover,
+        &:focus {
+            text-decoration: underline;
+        }
 
         &::after {
             content: "\2022";
@@ -697,7 +572,7 @@ footer {
     }
 
     .social {
-        text-align: left;
+        text-align: center;
         margin: 0;
     }
 
@@ -739,9 +614,25 @@ footer {
             }
         }
     }
+
+    .slider-navigation {
+        text-align: center;
+        background-color: $dark-green;
+
+        dd {
+            display: inline-block;
+            float: none;
+
+            a.button.small {
+                padding-left: rem-calc(14);
+                padding-right: rem-calc(14);
+            }
+        }
+    }
 }
 
 @media #{$medium-down} {
+
 }
 
 @media #{$medium-up} {
@@ -749,9 +640,62 @@ footer {
     html {
         font-size: 14px;
     }
+
+    .featured-content-row {
+
+        .orbit-container {
+            margin-top: -43px;
+        }
+
+        .slider-navigation {
+            padding: 0 44px;
+
+            dd {
+                border-left: 1px solid darken($dark-green, 5%);
+
+                &:first-child{
+
+                    &::before {
+                        content: "";
+                        display: block;
+                        position: absolute;
+                        top: 0;
+                        left: rem-calc(-42);
+                        border-left: rem-calc(44) solid transparent;
+                        border-top: rem-calc(47) solid $dark-green;
+                        height: rem-calc(44);
+                        width: rem-calc(24);
+                    }
+                }
+
+                &:last-child {
+
+                    &::after {
+                        content: "";
+                        display: block;
+                        position: absolute;
+                        top: 0;
+                        right: rem-calc(-42);
+                        border-right: rem-calc(44) solid transparent;
+                        border-top: rem-calc(47) solid $dark-green;
+                        height: rem-calc(44);
+                        width: rem-calc(24);
+                    }
+                }
+            }
+        }
+    }
 }
 
 @media #{$medium-only} {
+
+    .featured-content-row {
+
+        .orbit-container {
+            margin-top: -39px;
+        }
+    }
+
 }
 
 @media #{$large-up} {
@@ -759,9 +703,30 @@ footer {
     html {
         font-size: $rem-base;
     }
+
+    body {
+        background: url("../images/site_assets/body-bg.jpg") 50% 60px no-repeat $black-color;
+        background-size: cover;
+        background-attachment: fixed;
+    }
+
+    .featured-content-row {
+
+        .slider-row {
+
+            p {
+                margin: 0;
+            }
+
+            .button {
+                margin: rem-calc(14) 0 0 0;
+            }
+        }
+    }
 }
 
 @media #{$large-only} {
+
 }
 
 @media print {

@@ -15059,6 +15059,11 @@ td {
   background-color: #ffffff;
 }
 
+.button {
+  letter-spacing: 1px;
+  font-family: "furoreregular", Verdana, Tahoma, Arial, sans-serif;
+}
+
 /*-------------------------------------------
     Website Body / Backgrounds
   -----------------------------------------*/
@@ -15066,7 +15071,7 @@ td {
 body {
   min-height: 100%;
   width: 100%;
-  background: url("../images/site_assets/body-bg.jpg") 50% 60px no-repeat #0c6d28;
+  background: url("../images/site_assets/body-bg.jpg") 50% 60px no-repeat #000000;
   background-size: cover;
   background-attachment: fixed;
 }
@@ -15115,7 +15120,7 @@ header::before {
   content: "";
   display: block;
   height: 7px;
-  position: absolute;
+  position: fixed;
   width: 100%;
   z-index: 98;
   top: 0;
@@ -15140,8 +15145,10 @@ header .header {
 }
 
 header #logo {
+  float: left;
   position: relative;
   z-index: 97;
+  max-width: 25%;
 }
 
 header #logo .logo {
@@ -15165,19 +15172,70 @@ header #logo .logo::after {
 
 header #logo a {
   display: block;
+  background-color: #ffffff;
   width: 144px;
+  max-width: 100%;
+  overflow: hidden;
+  -webkit-transition: all 300ms linear 0s;
+  transition: all 300ms linear 0s;
+}
+
+header #logo a:hover img {
+  -webkit-transform: rotate(-8deg);
+  -ms-transform: rotate(-8deg);
+  transform: rotate(-8deg);
 }
 
 header #logo a img {
   display: block;
   max-width: 100%;
+  -webkit-transition: all 300ms linear 0s;
+  transition: all 300ms linear 0s;
+}
+
+header .fixed::after {
+  background: #0c6d28 none repeat scroll 0 0;
+  content: "";
+  display: block;
+  height: 4.0625rem;
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 50%;
+  z-index: 96;
+}
+
+header .fixed #logo a {
+  margin-top: 3px;
+  width: 104px;
+}
+
+header .fixed .top-bar-section,
+header .fixed .title-area {
+  z-index: 97;
+}
+
+header .fixed h3 {
+  font-size: 0.875rem;
+  padding: 0.875rem 1.25rem;
 }
 
 header h3 {
+  display: block;
+  clear: right;
   font-size: 1rem;
-  margin-top: 1.75rem;
+  padding: 1.75rem 1.25rem;
+  margin: 0;
+  max-width: 75%;
   text-align: right;
-  padding: 0 1.25rem;
+}
+
+.f-topbar-fixed header {
+  margin-bottom: 10rem;
+}
+
+.f-topbar-fixed header::after {
+  display: none;
 }
 
 /*-------------------------------------------
@@ -15186,6 +15244,12 @@ header h3 {
 
 .top-bar {
   margin: 0;
+  overflow: visible !important;
+}
+
+.top-bar.expanded {
+  background-color: transparent;
+  height: 4.0625rem !important;
 }
 
 .top-bar .menu li {
@@ -15209,6 +15273,11 @@ header h3 {
 
 .top-bar .menu-icon {
   font-family: "furoreregular", Verdana, Tahoma, Arial, sans-serif;
+  letter-spacing: 1px;
+}
+
+.top-bar .menu-icon span {
+  padding-right: 0.5rem;
 }
 
 /*-------------------------------------------
@@ -15227,19 +15296,20 @@ header h3 {
     Homepage Page styles
   -----------------------------------------*/
 
-.homepageItem {
-  margin: 10px 0;
+.featured-content .slider-row {
+  background-color: #ffffff;
+  padding: 2rem 0;
 }
 
-.homepageItem img {
-  width: 100%;
+.featured-content .slider-navigation li {
+  margin: 0;
 }
 
 /*-------------------------------------------
     Generic Page styles
   -----------------------------------------*/
 
-.readMoreImage {
+.contents-row .panel img {
   width: 100%;
 }
 
@@ -15279,7 +15349,7 @@ header h3 {
 
 .paginationHolder ul li.current a {
   color: #ffffff;
-  background: none #515151;
+  background: none #478c17;
   font-weight: normal;
 }
 
@@ -15581,7 +15651,7 @@ footer .footer-links a:last-child::after {
 }
 
 footer .social {
-  text-align: left;
+  text-align: center;
   margin: 0;
 }
 
@@ -15599,9 +15669,19 @@ footer .logo {
   }
 }
 
-@media only screen and (max-width: 64em) {
-  header:before,
-  header:after {
+@media only screen and (max-width: 40em) {
+  header #logo a,
+  header .fixed #logo a {
+    margin-top: 3px;
+    width: 92px;
+  }
+
+  header h3 {
+    font-size: 0.875rem;
+    padding: 0.875rem 1.25rem;
+  }
+
+  header h3 span {
     display: none;
   }
 }
