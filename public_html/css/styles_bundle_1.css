@@ -15064,6 +15064,19 @@ td {
   font-family: "furoreregular", Verdana, Tahoma, Arial, sans-serif;
 }
 
+.button.hollow {
+  background-color: #ffffff;
+  color: #0c6d28;
+  border: 1px solid #0c6d28;
+  border-radius: 4px;
+}
+
+.button.hollow:hover,
+.button.hollow:focus {
+  color: #ffffff;
+  background-color: #0c6d28;
+}
+
 /*-------------------------------------------
     Website Body / Backgrounds
   -----------------------------------------*/
@@ -15071,9 +15084,7 @@ td {
 body {
   min-height: 100%;
   width: 100%;
-  background: url("../images/site_assets/body-bg.jpg") 50% 60px no-repeat #000000;
-  background-size: cover;
-  background-attachment: fixed;
+  background: url("../images/site_assets/body-bg-mobile.jpg") 0 0 repeat #000000;
 }
 
 .superWrapper {
@@ -15296,13 +15307,35 @@ header h3 {
     Homepage Page styles
   -----------------------------------------*/
 
-.featured-content .slider-row {
+.featured-content-row .slider-row {
   background-color: #ffffff;
   padding: 2rem 0;
 }
 
-.featured-content .slider-navigation li {
+.featured-content-row .slider-navigation {
+  padding: 0;
   margin: 0;
+  position: relative;
+  z-index: 90;
+}
+
+.featured-content-row .slider-navigation dd {
+  position: relative;
+  margin: 0;
+}
+
+.featured-content-row .slider-navigation dd:first-child {
+  border: none;
+}
+
+.featured-content-row .slider-navigation dd a {
+  margin: 0;
+  color: #ffffff;
+}
+
+.featured-content-row .slider-navigation dd a.active,
+.featured-content-row .slider-navigation dd a:hover {
+  background-color: #095620;
 }
 
 /*-------------------------------------------
@@ -15360,189 +15393,6 @@ header h3 {
 }
 
 /* -----------------------------------------
-   Filter form styles
------------------------------------------ */
-
-#filterResultsFormHolder {
-  margin-top: 28px;
-  position: relative;
-  padding-bottom: 68px;
-}
-
-#filterResultsFormHolder h3 {
-  display: none;
-}
-
-#filterResultsFormHolder form {
-  margin: 0;
-}
-
-#filterResultsFormHolder .control-group {
-  width: 100%;
-  float: left;
-}
-
-#filterResultsFormHolder label {
-  font-size: 16px;
-  line-height: 20px;
-  margin-bottom: 12px;
-  text-transform: uppercase;
-  color: #052763;
-  cursor: default;
-}
-
-#filterResultsFormHolder .controls label {
-  font-size: 0.9285em;
-  font-size: 0.9285rem;
-  line-height: 1.285em;
-  line-height: 1.285rem;
-  text-transform: none;
-  color: #052763;
-  cursor: pointer;
-  margin-bottom: 0;
-}
-
-#filterResultsForm .formBtns {
-  float: none;
-  position: absolute;
-  bottom: 22px;
-  right: 0;
-  width: 25%;
-}
-
-#filterResultsForm .formBtns .checkAllBox {
-  float: left;
-  margin-top: 4px;
-}
-
-#filterResultsForm #filterResultsBtn {
-  float: right;
-  background: url(../images/site_assets/indexSlideArrow.png) no-repeat 80% 50% #0A3982;
-  border-radius: 16px 16px 16px 16px;
-  color: #FFFFFF;
-  display: block;
-  font-family: "futuramedium", "Helvetica", Tahoma, Arial, sans-serif;
-  font-size: 16px;
-  height: 32px;
-  line-height: 32px;
-  padding: 0 34px 0 16px;
-  text-align: left;
-  text-transform: uppercase;
-  border: none;
-  font-weight: normal !important;
-}
-
-#filterResultsForm #filterResultsBtn:hover {
-  cursor: pointer;
-  background: url(../images/site_assets/indexSlideArrow.png) no-repeat 80% 50% #011A48;
-}
-
-#filterResultsForm .checkAllBox label {
-  font-size: 0.9285em;
-  font-size: 0.9285rem;
-  line-height: 1.285em;
-  line-height: 1.285rem;
-  text-transform: none;
-  color: #052763;
-  cursor: pointer;
-  margin-bottom: 0;
-}
-
-.customCheckBox input {
-  display: none;
-}
-
-.lt-ie9 #filterResultsForm .customCheckBox input {
-  display: inline-block;
-  float: left;
-  clear: left;
-}
-
-.customCheckBox input + label {
-  padding: 3px 3px 3px 22px;
-  padding: 3px 3px 3px 1.6rem;
-  display: inline-block;
-  position: relative;
-  line-height: 18px;
-  line-height: 1.285rem;
-  clear: left;
-  float: left;
-}
-
-.lt-ie9 .customCheckBox input + label {
-  display: inline-block;
-  float: left;
-  clear: none;
-}
-
-.customCheckBox input + label:after {
-  content: '\00a0';
-  font-size: 14px;
-  font-size: 1rem;
-  position: absolute;
-  top: 3px;
-  left: 0px;
-  color: #99a1a7;
-  box-shadow: 0 1px 2px transparent, inset 0px 1px 3px rgba(13, 59, 131, 0);
-  border: none;
-  border-radius: 9px;
-  border-radius: 0.6425rem;
-  background-color: #FFF;
-  width: 18px;
-  height: 18px;
-  line-height: 18px;
-  width: 1.285rem;
-  height: 1.285rem;
-  line-height: 1.285rem;
-  text-align: center;
-}
-
-.lt-ie9 .customCheckBox input + label:after {
-  display: none;
-}
-
-.customCheckBox input:checked + label:after {
-  content: '\2714';
-  color: #FFF;
-  box-shadow: 0 1px 2px transparent, inset 0px -15px 10px -12px transparent, inset 15px 10px -12px rgba(13, 59, 131, 0);
-  border: none;
-  background-color: #052763;
-}
-
-.filterResultsFormBtns .customCheckBox input {
-  display: none;
-}
-
-.filterResultsFormBtns .customCheckBox input + label {
-  display: inline-block;
-  position: relative;
-  line-height: 1.2;
-  font-size: 1.5rem;
-  cursor: pointer;
-  margin: 0;
-  color: #478c17;
-  text-transform: none;
-  -webkit-transition: all 300ms ease-in-out;
-  transition: all 300ms ease-in-out;
-}
-
-.filterResultsFormBtns .customCheckBox input + label:after {
-  content: '\00a0';
-  font-size: 1.25rem;
-  color: #515151;
-  line-height: 1.2;
-  padding-left: 12px;
-}
-
-.filterResultsFormBtns .customCheckBox input + label:hover {
-  color: #515151;
-}
-
-.filterResultsFormBtns .customCheckBox input + label:hover:after {
-  content: '\2716';
-}
-
-/* -----------------------------------------
    Sitemap page
 ----------------------------------------- */
 
@@ -15594,6 +15444,7 @@ footer .contact li {
 
 footer .contact li p {
   padding-left: 5rem;
+  margin-bottom: 8px;
 }
 
 footer .contact i {
@@ -15614,21 +15465,26 @@ footer .contact > i {
 
 footer .contact a {
   color: #ffffff;
+  -webkit-transition: all 300ms linear 0s;
+  transition: all 300ms linear 0s;
 }
 
 footer .contact a:hover {
   color: #ffffff;
+  background-color: #073f17;
   text-decoration: underline;
 }
 
 footer .copywrite {
   font-size: 0.875rem;
   margin: 0 0 1rem 0;
+  color: #ffffff;
 }
 
 footer .about {
   font-size: 0.875rem;
   margin: 0 0 1rem 0;
+  color: #ffffff;
 }
 
 footer .footer-links a {
@@ -15638,6 +15494,11 @@ footer .footer-links a {
   padding: 3rem 0 2rem;
   margin: 0;
   font-size: 0.875rem;
+}
+
+footer .footer-links a:hover,
+footer .footer-links a:focus {
+  text-decoration: underline;
 }
 
 footer .footer-links a::after {
@@ -15684,17 +15545,88 @@ footer .logo {
   header h3 span {
     display: none;
   }
+
+  .slider-navigation {
+    text-align: center;
+    background-color: #0c6d28;
+  }
+
+  .slider-navigation dd {
+    display: inline-block;
+    float: none;
+  }
+
+  .slider-navigation dd a.button.small {
+    padding-left: 0.875rem;
+    padding-right: 0.875rem;
+  }
 }
 
 @media only screen and (min-width: 40.063em) {
   html {
     font-size: 14px;
   }
+
+  .featured-content-row .orbit-container {
+    margin-top: -43px;
+  }
+
+  .featured-content-row .slider-navigation {
+    padding: 0 44px;
+  }
+
+  .featured-content-row .slider-navigation dd {
+    border-left: 1px solid #095620;
+  }
+
+  .featured-content-row .slider-navigation dd:first-child::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: -2.625rem;
+    border-left: 2.75rem solid transparent;
+    border-top: 2.9375rem solid #0c6d28;
+    height: 2.75rem;
+    width: 1.5rem;
+  }
+
+  .featured-content-row .slider-navigation dd:last-child::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    right: -2.625rem;
+    border-right: 2.75rem solid transparent;
+    border-top: 2.9375rem solid #0c6d28;
+    height: 2.75rem;
+    width: 1.5rem;
+  }
+}
+
+@media only screen and (min-width: 40.063em) and (max-width: 64em) {
+  .featured-content-row .orbit-container {
+    margin-top: -39px;
+  }
 }
 
 @media only screen and (min-width: 64.063em) {
   html {
     font-size: 16px;
+  }
+
+  body {
+    background: url("../images/site_assets/body-bg.jpg") 50% 60px no-repeat #000000;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+
+  .featured-content-row .slider-row p {
+    margin: 0;
+  }
+
+  .featured-content-row .slider-row .button {
+    margin: 0.875rem 0 0 0;
   }
 }
 

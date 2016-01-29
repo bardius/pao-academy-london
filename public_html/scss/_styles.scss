@@ -332,6 +332,28 @@ header{
     }
 }
 
+.left-off-canvas-menu {
+
+    li{
+        position: relative;
+    }
+
+    ul.off-canvas-list li label{
+        font-size: rem-calc(18);
+        font-family: $alt-font-family;
+        border-bottom: $off-canvas-link-border-bottom;
+    }
+
+    a {
+        font-size: rem-calc(14);
+        font-family: $alt-font-family;
+
+        &.exit-off-canvas{
+
+        }
+    }
+}
+
 /*-------------------------------------------
     Orbit Slideshow
   -----------------------------------------*/
