@@ -8627,7 +8627,7 @@ blockquote p {
 }
 
 .tab-bar .menu-icon {
-  color: #FFF;
+  color: #ffffff;
   display: block;
   height: 2.8125rem;
   padding: 0;
@@ -8645,7 +8645,7 @@ blockquote p {
   position: absolute;
   top: 0.3125rem;
   left: 0.8125rem;
-  box-shadow: 0 0 0 1px #FFF, 0 7px 0 1px #FFF, 0 14px 0 1px #FFF;
+  box-shadow: 0 0 0 1px #ffffff, 0 7px 0 1px #ffffff, 0 14px 0 1px #ffffff;
   width: 1rem;
 }
 
@@ -8770,7 +8770,7 @@ ul.off-canvas-list li label {
   font-size: 0.75rem;
   font-weight: bold;
   margin: 0;
-  padding: 0.3rem 0.9375rem;
+  padding: 1rem;
   text-transform: uppercase;
 }
 
@@ -8778,7 +8778,7 @@ ul.off-canvas-list li a {
   border-bottom: 1px solid #095620;
   color: rgba(255, 255, 255, 0.7);
   display: block;
-  padding: 0.66666667rem;
+  padding: 1rem;
   -webkit-transition: background 300ms ease;
   transition: background 300ms ease;
 }
@@ -9124,7 +9124,7 @@ ul.off-canvas-list li a:active {
   border-top: 1px solid #119b39;
   color: #ffffff;
   font-weight: bold;
-  padding: 0.3rem 0.9375rem;
+  padding: 1rem;
   text-transform: uppercase;
   margin: 0;
 }
@@ -9181,7 +9181,7 @@ ul.off-canvas-list li a:active {
   border-top: 1px solid #119b39;
   color: #ffffff;
   font-weight: bold;
-  padding: 0.3rem 0.9375rem;
+  padding: 1rem;
   text-transform: uppercase;
   margin: 0;
 }
@@ -9239,7 +9239,7 @@ ul.off-canvas-list li a:active {
   border-top: 1px solid #119b39;
   color: #ffffff;
   font-weight: bold;
-  padding: 0.3rem 0.9375rem;
+  padding: 1rem;
   text-transform: uppercase;
   margin: 0;
 }
@@ -9291,7 +9291,7 @@ ul.off-canvas-list li a:active {
   border-top: 1px solid #119b39;
   color: #ffffff;
   font-weight: bold;
-  padding: 0.3rem 0.9375rem;
+  padding: 1rem;
   text-transform: uppercase;
   margin: 0;
 }
@@ -15289,6 +15289,21 @@ header h3 {
 
 .top-bar .menu-icon span {
   padding-right: 0.5rem;
+}
+
+.left-off-canvas-menu li {
+  position: relative;
+}
+
+.left-off-canvas-menu ul.off-canvas-list li label {
+  font-size: 1.125rem;
+  font-family: "furoreregular", Verdana, Tahoma, Arial, sans-serif;
+  border-bottom: 1px solid #095620;
+}
+
+.left-off-canvas-menu a {
+  font-size: 0.875rem;
+  font-family: "furoreregular", Verdana, Tahoma, Arial, sans-serif;
 }
 
 /*-------------------------------------------
