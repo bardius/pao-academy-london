@@ -418,6 +418,23 @@ header{
     }
 }
 
+.accordion-column {
+    display: none;
+    overflow: hidden;
+    width: 100%!important;
+}
+
+.no-js {
+
+    .accordion-column {
+        display: inherit!important;
+    }
+}
+
+.visibleToggler {
+    display: inherit!important;
+}
+
 /* -----------------------------------------
 	Pagination
 ----------------------------------------- */

@@ -51,7 +51,10 @@
 //   "foundation/components/visibility";
 
 /* Load the animate css */
-@import "animate";
+//@import "animate";
+
+/* Override the default mailchimp styles */
+@import "mailchimp";
 
 /* Load the custom styles */
 @import "styles";

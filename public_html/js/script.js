@@ -20,6 +20,7 @@
             BARDIS.windowResize.init();
             BARDIS.foundation.init();
             BARDIS.UI.init();
+            BARDIS.mailchimp.init();
 
             if (BARDIS.Supports.touch) {
                 BARDIS.touch.init();
@@ -33,13 +34,24 @@
 
     BARDIS.UI = {
         $sliderNavigationItems: $(".slider-navigation a"),
+        $toggleTriggerItems: $(".togglerTrigger"),
         init: function(){
             BARDIS.UI.sliderNavigationFix();
+            BARDIS.UI.contentToggler();
         },
         sliderNavigationFix: function(){
             BARDIS.UI.$sliderNavigationItems.on("click", function(){
                 BARDIS.UI.$sliderNavigationItems.removeClass("active");
                 $(this).addClass("active");
+            });
+        },
+        contentToggler: function(){
+            BARDIS.UI.$toggleTriggerItems.on("click", function(){
+                var $toggledElements = $("#" + $(this).data("toggletarget"));
+
+                $toggledElements.toggleClass("visibleToggler");
+                $toggledElements.toggle(300);
+                $(this).toggleClass("activeTrigger");
             });
         }
     };
@@ -94,6 +106,28 @@
                 }
             });
         }
+    };
+
+    BARDIS.mailchimp = {
+        init: function() {
+          window.fnames = [
+              'EMAIL',
+              'FNAME',
+              'LNAME',
+              'GROUP',
+              'PHONE',
+              'COMMENTS'
+          ];
+
+          window.ftypes = [
+              'email',
+              'text',
+              'text',
+              'dropdown',
+              'phone',
+              'text'
+          ];
+      }
     };
 
     BARDIS.touch = {

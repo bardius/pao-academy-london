@@ -11,7 +11,7 @@ module.exports = {
         options: {
             suppressSinglePage: false,
             maxSelectors: 4095,
-            maxPages: 1,
+            maxPages: 2,
             suffix: '_bundle_'
         }
     }
