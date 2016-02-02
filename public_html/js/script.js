@@ -40,18 +40,24 @@
             BARDIS.UI.contentToggler();
         },
         sliderNavigationFix: function(){
-            BARDIS.UI.$sliderNavigationItems.on("click", function(){
+            BARDIS.UI.$sliderNavigationItems.on("click", function(e){
                 BARDIS.UI.$sliderNavigationItems.removeClass("active");
                 $(this).addClass("active");
             });
         },
         contentToggler: function(){
-            BARDIS.UI.$toggleTriggerItems.on("click", function(){
+            BARDIS.UI.$toggleTriggerItems.on("click", function(e){
+                e.preventDefault();
+
                 var $toggledElements = $("#" + $(this).data("toggletarget"));
+                $(this).toggleClass("activeTrigger");
 
                 $toggledElements.toggleClass("visibleToggler");
-                $toggledElements.toggle(300);
-                $(this).toggleClass("activeTrigger");
+                $toggledElements.toggle(300, function(){
+                    $('html, body').animate({
+                        scrollTop: $toggledElements.first().offset().top - 80
+                    }, 500);
+                });
             });
         }
     };

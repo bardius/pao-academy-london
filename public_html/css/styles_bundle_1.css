@@ -12865,6 +12865,7 @@ header h3 {
 .accordion-column {
   display: none;
   overflow: hidden;
+  width: 100% !important;
 }
 
 .no-js .accordion-column {
@@ -12873,7 +12874,6 @@ header h3 {
 
 .visibleToggler {
   display: inherit !important;
-  width: 100% !important;
 }
 
 /* -----------------------------------------

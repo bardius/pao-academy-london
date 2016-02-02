@@ -412,6 +412,18 @@ header{
 
     .panel {
 
+        h3,
+        h4 {
+            color: $dark-green;
+        }
+
+
+        legend {
+            color: $dark-green;
+            font-family: $alt-font-family;
+            letter-spacing: 1px;
+        }
+
         img {
             width: 100%;
         }
@@ -432,7 +444,10 @@ header{
 }
 
 .visibleToggler {
-    display: inherit!important;
+}
+
+textarea {
+    resize: vertical;
 }
 
 /* -----------------------------------------
