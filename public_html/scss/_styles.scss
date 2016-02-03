@@ -342,6 +342,7 @@ header{
         font-size: rem-calc(18);
         font-family: $alt-font-family;
         border-bottom: $off-canvas-link-border-bottom;
+        letter-spacing: 1px;
     }
 
     a {
@@ -349,7 +350,14 @@ header{
         font-family: $alt-font-family;
 
         &.exit-off-canvas{
+            position: relative;
+            box-shadow: none;
+            background-color: $dark-green;
 
+            &:hover,
+            &:focus {
+                background-color: darken($dark-green, 5%);
+            }
         }
     }
 }

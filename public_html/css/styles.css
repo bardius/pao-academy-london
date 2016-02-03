@@ -10120,10 +10120,19 @@ header h3 {
   font-size: 1.125rem;
   font-family: "furoreregular", Verdana, Tahoma, Arial, sans-serif;
   border-bottom: 1px solid #095620;
+  letter-spacing: 1px;
 }
 .left-off-canvas-menu a {
   font-size: 0.875rem;
   font-family: "furoreregular", Verdana, Tahoma, Arial, sans-serif;
+}
+.left-off-canvas-menu a.exit-off-canvas {
+  position: relative;
+  box-shadow: none;
+  background-color: #0c6d28;
+}
+.left-off-canvas-menu a.exit-off-canvas:hover, .left-off-canvas-menu a.exit-off-canvas:focus {
+  background-color: #095620;
 }
 
 /*-------------------------------------------
