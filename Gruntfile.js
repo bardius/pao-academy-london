@@ -47,7 +47,8 @@ module.exports = function (grunt) {
                         'public_html/js/helpers/notification-dispatcher.js',
                         'public_html/js/helpers/smartResize.js',
                         'public_html/js/libs/mobile/normalized.addressbar.js',
-                        'public_html/js/script.js'
+                        'public_html/js/script.js',
+                        'public_html/js/libs/mailchimp/mc-validate.js'
                     ],
                     // <%=config.js.modernizrScriptFile%>
                     modernizrScriptFile: [

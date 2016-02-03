@@ -9,9 +9,6 @@
 /* Load the full foundation framework */
 @import "foundation";
 
-/* Foundation Icons */
-@import "foundation-icons";
-
 // Or selectively include components
 // @import
 //   "foundation/components/accordion",
@@ -49,6 +46,9 @@
 //   "foundation/components/type",
 //   "foundation/components/offcanvas",
 //   "foundation/components/visibility";
+
+/* Foundation Icons */
+@import "foundation-icons";
 
 /* Load the animate css */
 //@import "animate";

@@ -11,7 +11,7 @@ module.exports = {
             beautify: true, // beautify: beautify your code for debugging/troubleshooting purposes
             compress: false,
             // report: 'gzip', // report: Show file size report
-            sourceMap: '<%=config.js.releaseDir%><%=config.js.releaseFile%>.map',
+            //sourceMap: '<%=config.js.releaseDir%><%=config.js.releaseFile%>.map',
             sourceMappingURL: '/<%=config.js.releaseFile%>.map'
         },
         files: {
@@ -25,7 +25,7 @@ module.exports = {
             beautify: false, // beautify: beautify your code for debugging/troubleshooting purposes
             compress: true,
             // report: 'gzip', // report: Show file size report
-            sourceMap: '<%=config.js.releaseDir%><%=config.js.releaseFile%>.map',
+            //sourceMap: '<%=config.js.releaseDir%><%=config.js.releaseFile%>.map',
             sourceMappingURL: '/<%=config.js.releaseFile%>.map'
         },
         files: {
