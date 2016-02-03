@@ -35,9 +35,11 @@
     BARDIS.UI = {
         $sliderNavigationItems: $(".slider-navigation a"),
         $toggleTriggerItems: $(".togglerTrigger"),
+        $scrollerTriggerItems: $(".scrollToTrigger"),
         init: function(){
             BARDIS.UI.sliderNavigationFix();
             BARDIS.UI.contentToggler();
+            BARDIS.UI.contentScroller();
         },
         sliderNavigationFix: function(){
             BARDIS.UI.$sliderNavigationItems.on("click", function(e){
@@ -49,8 +51,20 @@
             BARDIS.UI.$toggleTriggerItems.on("click", function(e){
                 e.preventDefault();
 
-                var $toggledElements = $("#" + $(this).data("toggletarget"));
-                $(this).toggleClass("activeTrigger");
+                var $this = $(this);
+                var triggerTarget = $this.data("toggletarget");
+                var $toggledElements = $("#" + triggerTarget);
+
+                BARDIS.UI.$toggleTriggerItems.each(function() {
+                    if($(this).data("toggletarget") == triggerTarget){
+                        $(this).toggleClass("active");
+                        $(this).toggleClass("activeTrigger");
+
+                        if($(this).hasClass("in-menu-trigger")){
+                            $(this).parent("li").toggleClass("active");
+                        }
+                    }
+                });
 
                 $toggledElements.toggleClass("visibleToggler");
                 $toggledElements.toggle(300, function(){
@@ -58,6 +72,30 @@
                         scrollTop: $toggledElements.first().offset().top - 100
                     }, 500);
                 });
+            });
+        },
+        contentScroller: function(){
+            BARDIS.UI.$scrollerTriggerItems.on("click", function(e){
+                e.preventDefault();
+
+                var $this = $(this);
+                var scrolltarget = $this.data("scrolltarget");
+                var $scrollToElement = $("#" + scrolltarget).first();
+
+                BARDIS.UI.$scrollerTriggerItems.each(function() {
+                    if($(this).data("scrolltarget") == scrolltarget){
+                        $(this).toggleClass("active");
+                        $(this).toggleClass("activeTrigger");
+
+                        if($(this).hasClass("in-menu-trigger")){
+                            $(this).parent("li").toggleClass("active");
+                        }
+                    }
+                });
+
+                $('html, body').animate({
+                    scrollTop: $scrollToElement.offset().top - 100
+                }, 500);
             });
         }
     };
