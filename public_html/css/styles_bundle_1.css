@@ -12847,6 +12847,11 @@ header h3 {
   background-color: #095620;
 }
 
+.featured-content-row .featured-content {
+  list-style: none;
+  margin: 0;
+}
+
 /*-------------------------------------------
     Generic Page styles
   -----------------------------------------*/
