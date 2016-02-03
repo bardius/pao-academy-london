@@ -9,8 +9,13 @@ meta_keywords:
 fb_description:
 twitter_description:
 twitter_user: Domain
+
+mapLat: 51.487549
+mapLong: -0.237504
+mapZoom: 14
+mapTitle: PAO BC Academy London
 ---
-                        <div class="row contents-row spaced-row">
+                        <div id="mapPage" class="row contents-row spaced-row">
                             <div class="large-12 columns">
                                 <h3>
                                     Map & Directions
@@ -23,6 +28,14 @@ twitter_user: Domain
                                     reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
                                     pariatur.
                                 </p>
+
+                                <div id="map-canvas">
+                                </div>
+
+                                <input type="hidden" id="mapLat" value="{{ page.mapLat }}" />
+                                <input type="hidden" id="mapLong" value="{{ page.mapLong }}" />
+                                <input type="hidden" id="mapZoom" value="{{ page.mapZoom }}" />
+                                <input type="hidden" id="mapTitle" value="{{ page.mapTitle }}" />
                             </div>
                         </div>
 

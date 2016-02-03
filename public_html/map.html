@@ -123,6 +123,9 @@
                                                 <li>
                                                     <a href="/pricing-faq.html" title="Pricing"><span>Pricing</span></a>
                                                 </li>
+                                                <li class="active">
+                                                    <a href="/map.html" title="Find Us"><span>Find Us</span></a>
+                                                </li>
                                                 <li>
                                                     <a href="#" class="in-menu-trigger togglerTrigger" data-toggletarget="mailchimp_form" title="Join Now!"><span>Join Now!</span></a>
                                                 </li>
@@ -177,8 +180,8 @@
                                     </a>
                                 </li>
                                 <li class="active">
-                                    <a href="/map.html" title="Map Directions">
-                                        <span>Map Directions</span>
+                                    <a href="/map.html" title="Find Us">
+                                        <span>Find Us</span>
                                     </a>
                                 </li>
                                 <li>
@@ -192,7 +195,7 @@
 
                 
                     
-                        <div class="row contents-row spaced-row">
+                        <div id="mapPage" class="row contents-row spaced-row">
                             <div class="large-12 columns">
                                 <h3>
                                     Map & Directions
@@ -205,6 +208,14 @@
                                     reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
                                     pariatur.
                                 </p>
+
+                                <div id="map-canvas">
+                                </div>
+
+                                <input type="hidden" id="mapLat" value="51.487549" />
+                                <input type="hidden" id="mapLong" value="-0.237504" />
+                                <input type="hidden" id="mapZoom" value="14" />
+                                <input type="hidden" id="mapTitle" value="PAO BC Academy London" />
                             </div>
                         </div>
 
