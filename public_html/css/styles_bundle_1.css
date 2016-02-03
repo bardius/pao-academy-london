@@ -4529,7 +4529,7 @@ input[type="file"] {
 /* We add basic fieldset styling */
 
 fieldset {
-  border: 1px solid #DDDDDD;
+  border: 1px solid #0c6d28;
   margin: 1.125rem 0;
   padding: 1.25rem;
 }
@@ -5802,11 +5802,11 @@ ul.pagination li {
 .panel {
   border-style: solid;
   border-width: 1px;
-  border-color: #d8d8d8;
+  border-color: #e3e3e3;
   margin-bottom: 1.25rem;
   padding: 1.25rem;
-  background: #f2f2f2;
-  color: #333333;
+  background: #ffffff;
+  color: #000000;
 }
 
 .panel > :first-child {
@@ -5826,7 +5826,7 @@ ul.pagination li {
 .panel p,
 .panel li,
 .panel dl {
-  color: #333333;
+  color: #000000;
 }
 
 .panel h1,
@@ -5851,11 +5851,11 @@ ul.pagination li {
 .panel.callout {
   border-style: solid;
   border-width: 1px;
-  border-color: #d8d8d8;
+  border-color: #e3e3e3;
   margin-bottom: 1.25rem;
   padding: 1.25rem;
   background: #eafdef;
-  color: #333333;
+  color: #000000;
 }
 
 .panel.callout > :first-child {
@@ -5875,7 +5875,7 @@ ul.pagination li {
 .panel.callout p,
 .panel.callout li,
 .panel.callout dl {
-  color: #333333;
+  color: #000000;
 }
 
 .panel.callout h1,
@@ -12257,31 +12257,6 @@ th.hide-for-touch {
   border-color: #333;
 }
 
-#mc_embed_signup .button {
-  clear: both;
-  background-color: #aaa;
-  border: 0 none;
-  border-radius: 4px;
-  color: #FFFFFF;
-  cursor: pointer;
-  display: inline-block;
-  font-size: 15px;
-  font-weight: bold;
-  height: 32px;
-  line-height: 32px;
-  margin: 0 5px 10px 0;
-  padding: 0 22px;
-  text-align: center;
-  text-decoration: none;
-  vertical-align: top;
-  white-space: nowrap;
-  width: auto;
-}
-
-#mc_embed_signup .button:hover {
-  background-color: #777;
-}
-
 #mc_embed_signup .small-meta {
   font-size: 11px;
 }
@@ -12291,11 +12266,7 @@ th.hide-for-touch {
 }
 
 #mc_embed_signup .mc-field-group {
-  clear: left;
   position: relative;
-  width: 96%;
-  padding-bottom: 3%;
-  min-height: 50px;
 }
 
 #mc_embed_signup .size1of2 {
@@ -12441,13 +12412,6 @@ th.hide-for-touch {
   padding: .5em 0;
 }
 
-#mc-embedded-subscribe {
-  clear: both;
-  width: auto;
-  display: block;
-  margin: 1em 0 1em 5%;
-}
-
 #mc_embed_signup #num-subscribers {
   font-size: 1.1em;
 }
@@ -12463,6 +12427,35 @@ th.hide-for-touch {
   background: #fff;
   clear: left;
   font: 14px Helvetica,Arial,sans-serif;
+}
+
+/* ---------------------------------------------------
+   MailChimp Overrides
+----------------------------------------------------- */
+
+#mc_embed_signup form {
+  padding: 0;
+}
+
+#mc_embed_signup label {
+  position: relative;
+}
+
+#mc_embed_signup div.mce_inline_error {
+  margin-top: -1rem !important;
+  font-weight: normal !important;
+  font-size: 0.75rem;
+}
+
+#mc_embed_signup .mc-field-group div.datefield,
+#mc_embed_signup .mc-field-group select {
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+#mc_embed_signup .mc-field-group .asterisk {
+  line-height: 1;
+  top: 0;
 }
 
 /* Load the custom styles */
@@ -12858,6 +12851,17 @@ header h3 {
     Generic Page styles
   -----------------------------------------*/
 
+.contents-row .panel h3,
+.contents-row .panel h4 {
+  color: #0c6d28;
+}
+
+.contents-row .panel legend {
+  color: #0c6d28;
+  font-family: "furoreregular", Verdana, Tahoma, Arial, sans-serif;
+  letter-spacing: 1px;
+}
+
 .contents-row .panel img {
   width: 100%;
 }
@@ -12872,8 +12876,8 @@ header h3 {
   display: inherit !important;
 }
 
-.visibleToggler {
-  display: inherit !important;
+textarea {
+  resize: vertical;
 }
 
 /* -----------------------------------------

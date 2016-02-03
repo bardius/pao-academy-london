@@ -55,7 +55,7 @@
                 $toggledElements.toggleClass("visibleToggler");
                 $toggledElements.toggle(300, function(){
                     $('html, body').animate({
-                        scrollTop: $toggledElements.first().offset().top - 80
+                        scrollTop: $toggledElements.first().offset().top - 100
                     }, 500);
                 });
             });

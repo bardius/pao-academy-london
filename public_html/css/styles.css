@@ -10163,6 +10163,10 @@ header h3 {
 .featured-content-row .slider-navigation dd a.active, .featured-content-row .slider-navigation dd a:hover {
   background-color: #095620;
 }
+.featured-content-row .featured-content {
+  list-style: none;
+  margin: 0;
+}
 
 /*-------------------------------------------
     Generic Page styles
