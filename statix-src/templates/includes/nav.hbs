@@ -2,7 +2,7 @@
                                     <nav class="top-bar" data-topbar role="navigation" data-options="sticky_on: [small,medium,large]">
                                         <div id="logo">
                                             <h1 class="logo">
-                                                <a href="/" title="{{ page.siteName }}">
+                                                <a href="/index.html" title="{{ page.siteName }}">
                                                     <img src="/images/site_assets/site-logo.png" alt="{{ page.siteName }}" />
                                                     <span class="inv">{{ page.title }}</span>
                                                 </a>
@@ -11,17 +11,20 @@
 
                                         <section class="top-bar-section hide-for-medium-down right">
                                             <ul class="menu left">
-                                                <li class="active current">
-                                                    <a href="/" title=""><span>Home</span></a>
+                                                <li {{#is basename "index"}} class="active"{{/is}}>
+                                                    <a href="/index.html" title=""><span>Home</span></a>
                                                 </li>
-                                                <li>
+                                                <li{{#is basename "about-academy"}} class="active"{{/is}}>
                                                     <a href="/about-academy.html" title="The Academy"><span>The Academy</span></a>
                                                 </li>
-                                                <li>
+                                                <li{{#is basename "facilities"}} class="active"{{/is}}>
                                                     <a href="/facilities.html" title="Facilities"><span>Facilities</span></a>
                                                 </li>
-                                                <li>
+                                                <li{{#is basename "coaching"}} class="active"{{/is}}>
                                                     <a href="/coaching.html" title="Coaches"><span>Coaches</span></a>
+                                                </li>
+                                                <li{{#is basename "pricing-faq"}} class="active"{{/is}}>
+                                                    <a href="/pricing-faq.html" title="Pricing"><span>Pricing</span></a>
                                                 </li>
                                                 <li>
                                                     <a href="#" class="button togglerTrigger" data-toggletarget="mailchimp_form" title="Join Now!"><span>Join Now!</span></a>
