@@ -4777,7 +4777,7 @@ ul.pagination li {
 
 /* Pricing Tables */
 .pricing-table {
-  border: solid 1px #DDDDDD;
+  border: solid 1px #0c6d28;
   margin-left: 0;
   margin-bottom: 1.25rem;
 }
@@ -4786,8 +4786,8 @@ ul.pagination li {
   line-height: 1;
 }
 .pricing-table .title {
-  background-color: #333333;
-  color: #EEEEEE;
+  background-color: #0c6d28;
+  color: #ffffff;
   font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-size: 1rem;
   font-weight: normal;

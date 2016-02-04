@@ -7292,7 +7292,7 @@ meta.foundation-mq-topbar {
   color: #ffffff;
   display: block;
   font-family: "furoreregular", Verdana, Tahoma, Arial, sans-serif;
-  font-size: 0.875rem;
+  font-size: 0.8125rem;
   font-weight: normal;
   padding-left: 1.35416667rem;
   padding: 12px 0 12px 1.35416667rem;
@@ -7301,7 +7301,7 @@ meta.foundation-mq-topbar {
 }
 
 .top-bar-section ul li > a.button {
-  font-size: 0.875rem;
+  font-size: 0.8125rem;
   padding-left: 1.35416667rem;
   padding-right: 1.35416667rem;
   background-color: #0c6d28;
@@ -7400,7 +7400,7 @@ meta.foundation-mq-topbar {
 }
 
 .top-bar-section ul li > button {
-  font-size: 0.875rem;
+  font-size: 0.8125rem;
   padding-left: 1.35416667rem;
   padding-right: 1.35416667rem;
   background-color: #0c6d28;

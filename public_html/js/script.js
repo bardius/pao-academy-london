@@ -230,6 +230,12 @@
                     equalize_on_stack: false, // Specify if Equalizer should make elements equal height once they become stacked.
                     act_on_hidden_el: false // Allow equalizer to resize hidden elements
                 },
+                accordion: {
+                    content_class: 'content', // specify the class used for accordion panels
+                    active_class: 'active', // specify the class used for active (or open) accordion panels
+                    multi_expand: false, // allow multiple accordion panels to be active at the same time
+                    toggleable: true // allow accordion panels to be closed by clicking on their headers
+                },
                 orbit: {
                     animation: 'fade', // Sets the type of animation used for transitioning between slides, can also be 'fade' or 'slide'
                     timer_speed: 6000, // Sets the amount of time in milliseconds before transitioning a slide
