@@ -443,10 +443,32 @@ header{
     }
 }
 
+.pricing-table .title {
+    letter-spacing: 1px;
+}
+
 .accordion-column {
     display: none;
     overflow: hidden;
     width: 100%!important;
+}
+
+.accordion-navigation {
+
+    > a {
+        letter-spacing: 1px;
+
+        &:after {
+            content: "\25BC";
+            padding-left: 5px;
+            float: right;
+            font-size: 20px;
+        }
+    }
+
+    &.active > a:after {
+        content: "\25B2";
+    }
 }
 
 .no-js {
@@ -661,6 +683,24 @@ footer {
 
 @media #{$small-only} {
 
+    .slider-navigation {
+        text-align: center;
+        background-color: $dark-green;
+
+        dd {
+            display: inline-block;
+            float: none;
+
+            a.button.small {
+                padding-left: rem-calc(14);
+                padding-right: rem-calc(14);
+            }
+        }
+    }
+}
+
+@media #{$medium-down} {
+
     header{
 
         #logo,
@@ -681,25 +721,6 @@ footer {
             }
         }
     }
-
-    .slider-navigation {
-        text-align: center;
-        background-color: $dark-green;
-
-        dd {
-            display: inline-block;
-            float: none;
-
-            a.button.small {
-                padding-left: rem-calc(14);
-                padding-right: rem-calc(14);
-            }
-        }
-    }
-}
-
-@media #{$medium-down} {
-
 }
 
 @media #{$medium-up} {

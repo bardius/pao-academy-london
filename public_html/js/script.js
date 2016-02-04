@@ -41,6 +41,7 @@
             BARDIS.UI.sliderNavigationFix();
             BARDIS.UI.contentToggler();
             BARDIS.UI.contentScroller();
+            BARDIS.UI.fixOffScreenMenu();
 
             if($('#mapPage').length > 0){
                 BARDIS.mapConfig.mapInit();
@@ -104,6 +105,14 @@
                 $('html, body').animate({
                     scrollTop: $scrollToElement.offset().top - 100
                 }, 500);
+            });
+        },
+
+        fixOffScreenMenu: function(){
+            $(".left-off-canvas-toggle.menu-icon").on("click", function(){
+                $('html, body').animate({
+                    scrollTop: 0
+                }, 1);
             });
         }
 
@@ -206,13 +215,11 @@
 
         // functions that open the directions forms
         mapToHere: function() {
-
             BARDIS.mapConfig.map_infowindow.setContent(BARDIS.mapConfig.map_to_html);
             BARDIS.mapConfig.map_infowindow.open(BARDIS.mapConfig.map, BARDIS.mapConfig.marker);
         },
 
         mapFromHere: function() {
-
             BARDIS.mapConfig.map_infowindow.setContent(BARDIS.mapConfig.map_from_html);
             BARDIS.mapConfig.map_infowindow.open(BARDIS.mapConfig.map, BARDIS.mapConfig.marker);
         }

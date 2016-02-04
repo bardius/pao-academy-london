@@ -1475,23 +1475,23 @@ select {
 
 .accordion .accordion-navigation.active > a,
 .accordion dd.active > a {
-  background: #e8e8e8;
-  color: #222222;
+  background: #095620;
+  color: #ffffff;
 }
 
 .accordion .accordion-navigation > a,
 .accordion dd > a {
-  background: #EFEFEF;
-  color: #222222;
+  background: #0c6d28;
+  color: #ffffff;
   display: block;
-  font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-family: "furoreregular", Verdana, Tahoma, Arial, sans-serif;
   font-size: 1rem;
   padding: 1rem;
 }
 
 .accordion .accordion-navigation > a:hover,
 .accordion dd > a:hover {
-  background: #e3e3e3;
+  background: #095620;
 }
 
 .accordion .accordion-navigation > .content,
@@ -5913,7 +5913,7 @@ ul.pagination li {
 /* Pricing Tables */
 
 .pricing-table {
-  border: solid 1px #DDDDDD;
+  border: solid 1px #0c6d28;
   margin-left: 0;
   margin-bottom: 1.25rem;
 }
@@ -5924,9 +5924,9 @@ ul.pagination li {
 }
 
 .pricing-table .title {
-  background-color: #333333;
-  color: #EEEEEE;
-  font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  background-color: #0c6d28;
+  color: #ffffff;
+  font-family: "furoreregular", Verdana, Tahoma, Arial, sans-serif;
   font-size: 1rem;
   font-weight: normal;
   padding: 0.9375rem 1.25rem;
@@ -12883,10 +12883,29 @@ header h3 {
   width: 100%;
 }
 
+.pricing-table .title {
+  letter-spacing: 1px;
+}
+
 .accordion-column {
   display: none;
   overflow: hidden;
   width: 100% !important;
+}
+
+.accordion-navigation > a {
+  letter-spacing: 1px;
+}
+
+.accordion-navigation > a:after {
+  content: "\25BC";
+  padding-left: 5px;
+  float: right;
+  font-size: 20px;
+}
+
+.accordion-navigation.active > a:after {
+  content: "\25B2";
 }
 
 .no-js .accordion-column {
@@ -13082,21 +13101,6 @@ footer .logo {
 }
 
 @media only screen and (max-width: 40em) {
-  header #logo a,
-  header .fixed #logo a {
-    margin-top: 3px;
-    width: 92px;
-  }
-
-  header h3 {
-    font-size: 0.875rem;
-    padding: 0.875rem 1.25rem;
-  }
-
-  header h3 span {
-    display: none;
-  }
-
   .slider-navigation {
     text-align: center;
     background-color: #0c6d28;
@@ -13110,6 +13114,23 @@ footer .logo {
   .slider-navigation dd a.button.small {
     padding-left: 0.875rem;
     padding-right: 0.875rem;
+  }
+}
+
+@media only screen and (max-width: 64em) {
+  header #logo a,
+  header .fixed #logo a {
+    margin-top: 3px;
+    width: 92px;
+  }
+
+  header h3 {
+    font-size: 0.875rem;
+    padding: 0.875rem 1.25rem;
+  }
+
+  header h3 span {
+    display: none;
   }
 }
 
