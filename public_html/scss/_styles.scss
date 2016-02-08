@@ -565,20 +565,31 @@ footer {
     background-color: $dark-green;
     text-align: center;
     font-size: 1.2rem;
-    padding: 4rem;
+    padding: 2rem 0;
     margin-top: rem-calc(60);
 
-    .inline-list a {
-        display: inline-block;
-        width: 2rem;
-        height: 2rem;
-        background-color: darken($dark-green, 5%);
-        border-radius: 2px;
-        font-size: 1.5rem;
-        color: $white-color;
-        text-align: center;
-        line-height: 35px;
-        margin: 0 3px 0 0;
+    .inline-list {
+
+        a {
+            display: inline-block;
+            width: 2rem;
+            height: 2rem;
+            background-color: darken($dark-green, 5%);
+            border-radius: 2px;
+            font-size: 1.5rem;
+            color: $white-color;
+            text-align: center;
+            line-height: 35px;
+            margin: 0 3px 0 0;
+        }
+
+        &.social {
+            margin-bottom: rem-calc(16);
+
+            a{
+                line-height: 26px;
+            }
+        }
     }
 
     .contact {
@@ -588,37 +599,43 @@ footer {
         color: #fff;
 
         li {
-            margin-bottom: 2rem;
+            margin-bottom: 0;
+            text-align: center;
+            width: 100%;
 
             p {
-                padding-left: 5rem;
+                min-width: 30%;
+                padding: 0 1%;
+                display: inline-block;
                 margin-bottom: 8px;
             }
         }
 
         i {
-            position: absolute;
             background-color: darken($dark-green, 5%);
             color: #fff;
-            font-size: 2rem;
+            margin: 0;
+            padding: 0;
+            float: left;
+            position: relative;
+            text-align: center;
             border-radius: 50%;
-            line-height: 1;
-            margin: 0 0 0 -4rem;
-            vertical-align: middle;
-            padding: .25em .45em;
-        }
-
-        > i {
-            margin-right: 1rem;
+            width: 3rem;
+            height: 3rem;
+            line-height: 3rem;
+            font-size: 1.75rem;
         }
 
         a {
             color: $white-color;
-            transition: all $topbar-transition-speed linear 0s;
+            padding-left: 6px;
+            float: left;
+            text-align: left;
+            display: inline-block;
 
-            &:hover {
+            &:hover,
+            &:focus {
                 color: $white-color;
-                background-color: darken($dark-green, 10%);
                 text-decoration: underline;
             }
         }
@@ -646,17 +663,20 @@ footer {
 
         &:hover,
         &:focus {
-            text-decoration: underline;
+
+            span {
+                text-decoration: underline;
+            }
         }
 
-        &::after {
+        &::before {
             content: "\2022";
-            padding: 0 0.2rem 0 0.4rem;
+            padding: 0 0.4rem 0 0.2rem;
         }
 
-        &:last-child::after {
+        &:first-child::before {
             content: "";
-            padding: 0 0.4rem 0 0.8rem;
+            padding: 0 0.2rem 0 0.2rem;
         }
     }
 
@@ -773,6 +793,25 @@ footer {
             }
         }
     }
+
+    footer {
+
+        .inline-list {
+            &.social {
+                a{
+                    line-height: 35px;
+                }
+            }
+        }
+
+        .contact {
+            li {
+                p {
+                    min-width: 65%;
+                }
+            }
+        }
+    }
 }
 
 @media #{$medium-only} {
@@ -808,6 +847,17 @@ footer {
 
             .button {
                 margin: rem-calc(14) 0 0 0;
+            }
+        }
+    }
+
+
+    footer {
+        .contact {
+            li {
+                p {
+                    min-width: 70%;
+                }
             }
         }
     }

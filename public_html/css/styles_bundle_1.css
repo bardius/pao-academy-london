@@ -13066,8 +13066,8 @@ footer .footer-links a {
   font-size: 0.875rem;
 }
 
-footer .footer-links a:hover,
-footer .footer-links a:focus {
+footer .footer-links a:hover span,
+footer .footer-links a:focus span {
   text-decoration: underline;
 }
 
