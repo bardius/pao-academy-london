@@ -10313,7 +10313,7 @@ footer .contact li {
   width: 100%;
 }
 footer .contact li p {
-  min-width: 33%;
+  min-width: 30%;
   padding: 0 1%;
   display: inline-block;
   margin-bottom: 8px;
