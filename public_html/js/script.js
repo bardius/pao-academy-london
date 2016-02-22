@@ -124,8 +124,12 @@
         mapKey:			'AIzaSyB8uoWbuhHNagbpi22tEeZYiT41toB171g',
         mapLatitude:	$('#mapLat').val(),
         mapLongitude:	$('#mapLong').val(),
+        mapLatitude2:	$('#mapLat2').val(),
+        mapLongitude2:	$('#mapLong2').val(),
         mapZoom:		14,
+        mapZoom2:		14,
         markerTitle:	$('#mapTitle').val(),
+        markerTitle2:	$('#mapTitle2').val(),
         mapCanvasId:	'map-canvas',
         GMapScriptURL:	'http://maps.google.com/maps/api/js?sensor=false&key=',
         map_html:		'',
@@ -141,24 +145,42 @@
         showMap: function() {
             var windowHeight	= $(window).height();
             var mapLatlng		= new google.maps.LatLng(BARDIS.mapConfig.mapLatitude, BARDIS.mapConfig.mapLongitude);
+            var mapLatlng2		= new google.maps.LatLng(BARDIS.mapConfig.mapLatitude2, BARDIS.mapConfig.mapLongitude2);
             var contentString	= '<h4>' + BARDIS.mapConfig.markerTitle + '</h4>';
+            var contentString2	= '<h4>' + BARDIS.mapConfig.markerTitle2 + '</h4>';
 
             // The info window version with the "to here" form open
-            BARDIS.mapConfig.map_to_html = contentString + '<p>Get Directions: <b>To here</b> - <a href="javascript:BARDIS.mapConfig.mapFromHere()">From here</a></p>' +
-                '<form action="http://maps.google.com/maps" method="get"" target="_blank"><label for="saddr">Start address:</label>' +
-                '<input type="text" size="40" maxlength="80" name="saddr" id="saddr" value="" /><br />' +
-                '<input class="button small" value="Get Directions" type="submit" />' +
-                '<input type="hidden" name="daddr" value="' + BARDIS.mapConfig.mapLatitude + ',' + BARDIS.mapConfig.mapLongitude + "(" + BARDIS.mapConfig.markerTitle + ")" + '"/></form>';
+            BARDIS.mapConfig.map_to_html = contentString + '<p>Get Directions: <b>To here</b> - <a href="javascript:BARDIS.mapConfig.mapFromHere(1)">From here</a></p>' +
+            '<form action="http://maps.google.com/maps" method="get"" target="_blank"><label for="saddr">Start address:</label>' +
+            '<input type="text" size="40" maxlength="80" name="saddr" id="saddr" value="" /><br />' +
+            '<input class="button small" value="Get Directions" type="submit" />' +
+            '<input type="hidden" name="daddr" value="' + BARDIS.mapConfig.mapLatitude + ',' + BARDIS.mapConfig.mapLongitude + "(" + BARDIS.mapConfig.markerTitle + ")" + '"/></form>';
+
+
+            BARDIS.mapConfig.map_to_html2 = contentString + '<p>Get Directions: <b>To here</b> - <a href="javascript:BARDIS.mapConfig.mapFromHere(2)">From here</a></p>' +
+            '<form action="http://maps.google.com/maps" method="get"" target="_blank"><label for="saddr">Start address:</label>' +
+            '<input type="text" size="40" maxlength="80" name="saddr" id="saddr" value="" /><br />' +
+            '<input class="button small" value="Get Directions" type="submit" />' +
+            '<input type="hidden" name="daddr" value="' + BARDIS.mapConfig.mapLatitude2 + ',' + BARDIS.mapConfig.mapLongitude2 + "(" + BARDIS.mapConfig.markerTitle2 + ")" + '"/></form>';
 
             // The info window version with the "to here" form open
-            BARDIS.mapConfig.map_from_html = contentString + '<p>Get Directions: <a href="javascript:BARDIS.mapConfig.mapToHere()">To here</a> - <b>From here</b></p>' +
-                '<form action="http://maps.google.com/maps" method="get"" target="_blank"><label for="daddr">End address:</label>' +
-                '<input type="text" size="40" maxlength="80" name="daddr" id="daddr" value="" /><br />' +
-                '<input class="button small" value="Get Directions" type="submit" />' +
-                '<input type="hidden" name="saddr" value="' + BARDIS.mapConfig.mapLatitude + ',' + BARDIS.mapConfig.mapLongitude + "(" + BARDIS.mapConfig.markerTitle + ")" + '"/></form>';
+            BARDIS.mapConfig.map_from_html = contentString + '<p>Get Directions: <a href="javascript:BARDIS.mapConfig.mapToHere(1)">To here</a> - <b>From here</b></p>' +
+            '<form action="http://maps.google.com/maps" method="get"" target="_blank"><label for="daddr">End address:</label>' +
+            '<input type="text" size="40" maxlength="80" name="daddr" id="daddr" value="" /><br />' +
+            '<input class="button small" value="Get Directions" type="submit" />' +
+            '<input type="hidden" name="saddr" value="' + BARDIS.mapConfig.mapLatitude + ',' + BARDIS.mapConfig.mapLongitude + "(" + BARDIS.mapConfig.markerTitle + ")" + '"/></form>';
+
+
+            BARDIS.mapConfig.map_from_html2 = contentString + '<p>Get Directions: <a href="javascript:BARDIS.mapConfig.mapToHere(2)">To here</a> - <b>From here</b></p>' +
+            '<form action="http://maps.google.com/maps" method="get"" target="_blank"><label for="daddr">End address:</label>' +
+            '<input type="text" size="40" maxlength="80" name="daddr" id="daddr" value="" /><br />' +
+            '<input class="button small" value="Get Directions" type="submit" />' +
+            '<input type="hidden" name="saddr" value="' + BARDIS.mapConfig.mapLatitude2 + ',' + BARDIS.mapConfig.mapLongitude2 + "(" + BARDIS.mapConfig.markerTitle2 + ")" + '"/></form>';
 
             // The inactive version of the direction info
-            BARDIS.mapConfig.map_html = contentString + '<p>Get Directions: <a href="javascript:BARDIS.mapConfig.mapToHere()">To here</a> - <a href="javascript:BARDIS.mapConfig.mapFromHere()">From here</a></p>';
+            BARDIS.mapConfig.map_html = contentString + '<p>Get Directions: <a href="javascript:BARDIS.mapConfig.mapToHere(1)">To here</a> - <a href="javascript:BARDIS.mapConfig.mapFromHere(1)">From here</a></p>';
+
+            BARDIS.mapConfig.map_html2 = contentString + '<p>Get Directions: <a href="javascript:BARDIS.mapConfig.mapToHere(2)">To here</a> - <a href="javascript:BARDIS.mapConfig.mapFromHere(2)">From here</a></p>';
 
             $('#' + BARDIS.mapConfig.mapCanvasId).css('height', (windowHeight / 2) + 'px');
 
@@ -187,8 +209,19 @@
                     title:		BARDIS.mapConfig.markerTitle
                 });
 
+                BARDIS.mapConfig.marker2 = new google.maps.Marker({
+                    position:	mapLatlng2,
+                    map:		BARDIS.mapConfig.map,
+                    title:		BARDIS.mapConfig.markerTitle2
+                });
+
                 BARDIS.mapConfig.map_infowindow = new google.maps.InfoWindow({
                     content: BARDIS.mapConfig.map_html,
+                    disableAutoPan : false
+                });
+
+                BARDIS.mapConfig.map_infowindow2 = new google.maps.InfoWindow({
+                    content: BARDIS.mapConfig.map_html2,
                     disableAutoPan : false
                 });
 
@@ -196,8 +229,16 @@
                     BARDIS.mapConfig.map_infowindow.open(BARDIS.mapConfig.map, BARDIS.mapConfig.marker);
                 });
 
+                google.maps.event.addListener(BARDIS.mapConfig.marker2, 'click', function() {
+                    BARDIS.mapConfig.map_infowindow2.open(BARDIS.mapConfig.map, BARDIS.mapConfig.marker2);
+                });
+
                 google.maps.event.addListener(BARDIS.mapConfig.map_infowindow, 'closeclick', function() {
                     BARDIS.mapConfig.map_infowindow.setContent(BARDIS.mapConfig.map_html);
+                });
+
+                google.maps.event.addListener(BARDIS.mapConfig.map_infowindow2, 'closeclick', function() {
+                    BARDIS.mapConfig.map_infowindow2.setContent(BARDIS.mapConfig.map_html);
                 });
 
                 //loaded fully
