@@ -1,0 +1,29 @@
+@media only screen and (min-width: 64.063em) {
+  html {
+    font-size: 16px;
+  }
+
+  body {
+    background: url("../images/site_assets/body-bg.jpg") 50% 60px no-repeat #000000;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+
+  .featured-content-row .slider-row p {
+    margin: 0;
+  }
+
+  .featured-content-row .slider-row .button {
+    margin: 0.875rem 0 0 0;
+  }
+
+  footer .contact li p {
+    min-width: 78%;
+  }
+}
+
+@media print {
+  div:not(.reveal-modal) {
+    display: inherit !important;
+  }
+}
