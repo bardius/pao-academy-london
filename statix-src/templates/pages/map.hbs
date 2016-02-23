@@ -10,15 +10,15 @@ fb_description:
 twitter_description:
 twitter_user: Domain
 
-mapLat: 51.624477
-mapLong: -0.060388
-mapZoom: 14
-mapTitle: Edmonton Leisure Centre
+mapZoom: 10
 
-mapLat2: 51.493878
-mapLong2: -0.239544
-mapZoom2: 14
-mapTitle2: Paul's Boys School
+mapLat: 51.493878
+mapLong: -0.239544
+mapTitle: Paul's Boys School
+
+mapLat2: 51.624477
+mapLong2: -0.060388
+mapTitle2: Edmonton Leisure Centre
 ---
 
                         <div id="mapPage" class="row contents-row spaced-row">
@@ -33,26 +33,32 @@ mapTitle2: Paul's Boys School
                                     Edmonton Leisure Centre in Enfield, North London
                                 </h5>
                                 <p>
-                                    Address: Edmonton Leisure Centre, 2 The Broadway, London N9 0TR
+                                    <strong>Address:</strong>
+                                    <br/>Edmonton Leisure Centre,
+                                    <br/>2 The Broadway, London
+                                    <br/>N9 0TR
                                 </p>
                                 <h5>
                                     St. Paul's Boys School in Hammersmith, West London
                                 </h5>
                                 <p>
-                                    Address: St. Paul's Boys School, Lonsdale Road, SW13 9JT
+                                    <strong>Address:</strong>
+                                    <br/>St. Paul's Boys School,
+                                    <br/>Lonsdale Road,
+                                    <br/>SW13 9JT
                                 </p>
 
                                 <div id="map-canvas">
                                 </div>
 
+                                <input type="hidden" id="mapZoom" value="{{ page.mapZoom }}" />
+
                                 <input type="hidden" id="mapLat" value="{{ page.mapLat }}" />
                                 <input type="hidden" id="mapLong" value="{{ page.mapLong }}" />
-                                <input type="hidden" id="mapZoom" value="{{ page.mapZoom }}" />
                                 <input type="hidden" id="mapTitle" value="{{ page.mapTitle }}" />
 
                                 <input type="hidden" id="mapLat2" value="{{ page.mapLat2 }}" />
                                 <input type="hidden" id="mapLong2" value="{{ page.mapLong2 }}" />
-                                <input type="hidden" id="mapZoom2" value="{{ page.mapZoom2 }}" />
                                 <input type="hidden" id="mapTitle2" value="{{ page.mapTitle2 }}" />
                             </div>
                         </div>

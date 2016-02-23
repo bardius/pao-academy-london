@@ -126,12 +126,11 @@
         mapLongitude:	$('#mapLong').val(),
         mapLatitude2:	$('#mapLat2').val(),
         mapLongitude2:	$('#mapLong2').val(),
-        mapZoom:		14,
-        mapZoom2:		14,
         markerTitle:	$('#mapTitle').val(),
         markerTitle2:	$('#mapTitle2').val(),
+        mapZoom:		18,
         mapCanvasId:	'map-canvas',
-        GMapScriptURL:	'http://maps.google.com/maps/api/js?sensor=false&key=',
+        GMapScriptURL:	'//maps.google.com/maps/api/js?sensor=false&key=',
         map_html:		'',
         map_to_html:	'',
         map_from_html:	'',
@@ -157,7 +156,7 @@
             '<input type="hidden" name="daddr" value="' + BARDIS.mapConfig.mapLatitude + ',' + BARDIS.mapConfig.mapLongitude + "(" + BARDIS.mapConfig.markerTitle + ")" + '"/></form>';
 
 
-            BARDIS.mapConfig.map_to_html2 = contentString + '<p>Get Directions: <b>To here</b> - <a href="javascript:BARDIS.mapConfig.mapFromHere(2)">From here</a></p>' +
+            BARDIS.mapConfig.map_to_html2 = contentString2 + '<p>Get Directions: <b>To here</b> - <a href="javascript:BARDIS.mapConfig.mapFromHere(2)">From here</a></p>' +
             '<form action="http://maps.google.com/maps" method="get"" target="_blank"><label for="saddr">Start address:</label>' +
             '<input type="text" size="40" maxlength="80" name="saddr" id="saddr" value="" /><br />' +
             '<input class="button small" value="Get Directions" type="submit" />' +
@@ -171,7 +170,7 @@
             '<input type="hidden" name="saddr" value="' + BARDIS.mapConfig.mapLatitude + ',' + BARDIS.mapConfig.mapLongitude + "(" + BARDIS.mapConfig.markerTitle + ")" + '"/></form>';
 
 
-            BARDIS.mapConfig.map_from_html2 = contentString + '<p>Get Directions: <a href="javascript:BARDIS.mapConfig.mapToHere(2)">To here</a> - <b>From here</b></p>' +
+            BARDIS.mapConfig.map_from_html2 = contentString2 + '<p>Get Directions: <a href="javascript:BARDIS.mapConfig.mapToHere(2)">To here</a> - <b>From here</b></p>' +
             '<form action="http://maps.google.com/maps" method="get"" target="_blank"><label for="daddr">End address:</label>' +
             '<input type="text" size="40" maxlength="80" name="daddr" id="daddr" value="" /><br />' +
             '<input class="button small" value="Get Directions" type="submit" />' +
@@ -180,7 +179,7 @@
             // The inactive version of the direction info
             BARDIS.mapConfig.map_html = contentString + '<p>Get Directions: <a href="javascript:BARDIS.mapConfig.mapToHere(1)">To here</a> - <a href="javascript:BARDIS.mapConfig.mapFromHere(1)">From here</a></p>';
 
-            BARDIS.mapConfig.map_html2 = contentString + '<p>Get Directions: <a href="javascript:BARDIS.mapConfig.mapToHere(2)">To here</a> - <a href="javascript:BARDIS.mapConfig.mapFromHere(2)">From here</a></p>';
+            BARDIS.mapConfig.map_html2 = contentString2 + '<p>Get Directions: <a href="javascript:BARDIS.mapConfig.mapToHere(2)">To here</a> - <a href="javascript:BARDIS.mapConfig.mapFromHere(2)">From here</a></p>';
 
             $('#' + BARDIS.mapConfig.mapCanvasId).css('height', (windowHeight / 2) + 'px');
 
@@ -193,58 +192,58 @@
                 mapTypeId:	google.maps.MapTypeId.ROADMAP,
                 zoom:		BARDIS.mapConfig.mapZoom
             };
+            console.log(mapOptions);
 
             BARDIS.mapConfig.map = new google.maps.Map(document.getElementById(BARDIS.mapConfig.mapCanvasId), mapOptions);
 
             google.maps.event.addDomListener(window, "resize", function() {
                 var newCenter = BARDIS.mapConfig.map.getCenter();
                 google.maps.event.trigger(BARDIS.mapConfig.map, "resize");
+                BARDIS.mapConfig.map.setZoom(BARDIS.mapConfig.mapZoom);
                 BARDIS.mapConfig.map.setCenter(newCenter);
             });
 
-            if(BARDIS.mapConfig.mapZoom === 14){
-                BARDIS.mapConfig.marker	= new google.maps.Marker({
-                    position:	mapLatlng,
-                    map:		BARDIS.mapConfig.map,
-                    title:		BARDIS.mapConfig.markerTitle
-                });
+            BARDIS.mapConfig.marker	= new google.maps.Marker({
+                position:	mapLatlng,
+                map:		BARDIS.mapConfig.map,
+                title:		BARDIS.mapConfig.markerTitle
+            });
 
-                BARDIS.mapConfig.marker2 = new google.maps.Marker({
-                    position:	mapLatlng2,
-                    map:		BARDIS.mapConfig.map,
-                    title:		BARDIS.mapConfig.markerTitle2
-                });
+            BARDIS.mapConfig.marker2 = new google.maps.Marker({
+                position:	mapLatlng2,
+                map:		BARDIS.mapConfig.map,
+                title:		BARDIS.mapConfig.markerTitle2
+            });
 
-                BARDIS.mapConfig.map_infowindow = new google.maps.InfoWindow({
-                    content: BARDIS.mapConfig.map_html,
-                    disableAutoPan : false
-                });
+            BARDIS.mapConfig.map_infowindow = new google.maps.InfoWindow({
+                content: BARDIS.mapConfig.map_html,
+                disableAutoPan : false
+            });
 
-                BARDIS.mapConfig.map_infowindow2 = new google.maps.InfoWindow({
-                    content: BARDIS.mapConfig.map_html2,
-                    disableAutoPan : false
-                });
+            BARDIS.mapConfig.map_infowindow2 = new google.maps.InfoWindow({
+                content: BARDIS.mapConfig.map_html2,
+                disableAutoPan : false
+            });
 
-                google.maps.event.addListener(BARDIS.mapConfig.marker, 'click', function() {
-                    BARDIS.mapConfig.map_infowindow.open(BARDIS.mapConfig.map, BARDIS.mapConfig.marker);
-                });
+            google.maps.event.addListener(BARDIS.mapConfig.marker, 'click', function() {
+                BARDIS.mapConfig.map_infowindow.open(BARDIS.mapConfig.map, BARDIS.mapConfig.marker);
+            });
 
-                google.maps.event.addListener(BARDIS.mapConfig.marker2, 'click', function() {
-                    BARDIS.mapConfig.map_infowindow2.open(BARDIS.mapConfig.map, BARDIS.mapConfig.marker2);
-                });
+            google.maps.event.addListener(BARDIS.mapConfig.marker2, 'click', function() {
+                BARDIS.mapConfig.map_infowindow2.open(BARDIS.mapConfig.map, BARDIS.mapConfig.marker2);
+            });
 
-                google.maps.event.addListener(BARDIS.mapConfig.map_infowindow, 'closeclick', function() {
-                    BARDIS.mapConfig.map_infowindow.setContent(BARDIS.mapConfig.map_html);
-                });
+            google.maps.event.addListener(BARDIS.mapConfig.map_infowindow, 'closeclick', function() {
+                BARDIS.mapConfig.map_infowindow.setContent(BARDIS.mapConfig.map_html);
+            });
 
-                google.maps.event.addListener(BARDIS.mapConfig.map_infowindow2, 'closeclick', function() {
-                    BARDIS.mapConfig.map_infowindow2.setContent(BARDIS.mapConfig.map_html);
-                });
+            google.maps.event.addListener(BARDIS.mapConfig.map_infowindow2, 'closeclick', function() {
+                BARDIS.mapConfig.map_infowindow2.setContent(BARDIS.mapConfig.map_html2);
+            });
 
-                //loaded fully
-                google.maps.event.addListenerOnce(BARDIS.mapConfig.map, 'idle', function(){
-                });
-            }
+            //loaded fully
+            google.maps.event.addListenerOnce(BARDIS.mapConfig.map, 'idle', function(){
+            });
 
             $(document).on('opened', '[data-reveal]', function () {
                 var newCenter = BARDIS.mapConfig.map.getCenter();
@@ -255,14 +254,26 @@
         },
 
         // functions that open the directions forms
-        mapToHere: function() {
-            BARDIS.mapConfig.map_infowindow.setContent(BARDIS.mapConfig.map_to_html);
-            BARDIS.mapConfig.map_infowindow.open(BARDIS.mapConfig.map, BARDIS.mapConfig.marker);
+        mapToHere: function(markerIndex) {
+            if(markerIndex === 2){
+                BARDIS.mapConfig.map_infowindow2.setContent(BARDIS.mapConfig.map_to_html2);
+                BARDIS.mapConfig.map_infowindow2.open(BARDIS.mapConfig.map, BARDIS.mapConfig.marker2);
+            }
+            else {
+                BARDIS.mapConfig.map_infowindow.setContent(BARDIS.mapConfig.map_to_html);
+                BARDIS.mapConfig.map_infowindow.open(BARDIS.mapConfig.map, BARDIS.mapConfig.marker);
+            }
         },
 
-        mapFromHere: function() {
-            BARDIS.mapConfig.map_infowindow.setContent(BARDIS.mapConfig.map_from_html);
-            BARDIS.mapConfig.map_infowindow.open(BARDIS.mapConfig.map, BARDIS.mapConfig.marker);
+        mapFromHere: function(markerIndex) {
+            if(markerIndex === 2){
+                BARDIS.mapConfig.map_infowindow2.setContent(BARDIS.mapConfig.map_from_html2);
+                BARDIS.mapConfig.map_infowindow2.open(BARDIS.mapConfig.map, BARDIS.mapConfig.marker2);
+            }
+            else {
+                BARDIS.mapConfig.map_infowindow.setContent(BARDIS.mapConfig.map_from_html);
+                BARDIS.mapConfig.map_infowindow.open(BARDIS.mapConfig.map, BARDIS.mapConfig.marker);
+            }
         }
     };
 
