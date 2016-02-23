@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" />
 
         <title>{{ page.title }} | {{ page.siteName }}</title>
-        <meta name="description" content="{{ page.meta_description }} {{ page.siteName }}">
+        <meta name="description" content="{{ page.title }}. {{ page.meta_description }}. {{ page.siteName }}">
         <meta name="keywords" content="{{ page.meta_keywords }}">
 
         <link rel="alternate" hreflang="en" href="{{ page.siteURL }}{{ page.pageURL }}" />
@@ -14,7 +14,7 @@
 
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="white">
-        <meta name="apple-mobile-web-app-title" content="PAO BC Academy London">
+        <meta name="apple-mobile-web-app-title" content="PAO Basketball Academy London">
         <meta name="mobile-web-app-capable" content="yes">
 
         <link rel="apple-touch-icon" sizes="57x57" href="/images/favicons/apple-touch-icon-57x57.png">
@@ -68,7 +68,7 @@
         <meta name="twitter:site" content="@{{ page.twitter_user }}" />
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:title" content="{{ page.title }} | {{ page.siteName }}" />
-        <meta name="twitter:description" content="{{ page.twitter_description }}" />
+        <meta name="twitter:description" content="{{ page.title }}. {{ page.twitter_description }}" />
         <meta name="twitter:image:src" content="{{ page.siteURL }}/images/favicons/logo_media.jpg" />
 
         <!-- Facebook Opengraph -->
@@ -76,6 +76,6 @@
         <meta property="og:type" content="website" />
         <meta property="og:url" content="{{ page.siteURL }}" />
         <meta property="og:image" content="{{ page.siteURL }}/images/favicons/logo_media.jpg" />
-        <meta property="og:description" content="{{ page.fb_description }}" />
+        <meta property="og:description" content="{{ page.title }}. {{ page.fb_description }}" />
 
     </head>
