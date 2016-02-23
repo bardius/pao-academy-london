@@ -192,14 +192,12 @@
                 mapTypeId:	google.maps.MapTypeId.ROADMAP,
                 zoom:		BARDIS.mapConfig.mapZoom
             };
-            console.log(mapOptions);
 
             BARDIS.mapConfig.map = new google.maps.Map(document.getElementById(BARDIS.mapConfig.mapCanvasId), mapOptions);
 
             google.maps.event.addDomListener(window, "resize", function() {
                 var newCenter = BARDIS.mapConfig.map.getCenter();
                 google.maps.event.trigger(BARDIS.mapConfig.map, "resize");
-                BARDIS.mapConfig.map.setZoom(BARDIS.mapConfig.mapZoom);
                 BARDIS.mapConfig.map.setCenter(newCenter);
             });
 

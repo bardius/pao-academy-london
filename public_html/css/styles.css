@@ -10313,7 +10313,7 @@ footer .contact li {
   width: 100%;
 }
 footer .contact li p {
-  min-width: 30%;
+  min-width: 63%;
   padding: 0 1%;
   display: inline-block;
   margin-bottom: 8px;
@@ -10347,6 +10347,13 @@ footer .copywrite {
   font-size: 0.875rem;
   margin: 0 0 1rem 0;
   color: #ffffff;
+}
+footer .copywrite a {
+  color: #ffffff;
+}
+footer .copywrite a:hover, footer .copywrite a:focus {
+  color: #ffffff;
+  text-decoration: underline;
 }
 footer .about {
   font-size: 0.875rem;
@@ -10483,7 +10490,7 @@ footer .logo {
   }
 
   footer .contact li p {
-    min-width: 70%;
+    min-width: 78%;
   }
 }
 @media print {
