@@ -121,7 +121,7 @@
     BARDIS.mapConfig = {
         // Map settings
         map:			null,
-        mapKey:			'AIzaSyB8uoWbuhHNagbpi22tEeZYiT41toB171g',
+        mapKey:			'AIzaSyDE2j1TMJB0BKXa7ITcB5TKZIrxxgPrcgQ',
         mapLatitude:	$('#mapLat').val(),
         mapLongitude:	$('#mapLong').val(),
         mapLatitude2:	$('#mapLat2').val(),
@@ -130,7 +130,7 @@
         markerTitle2:	$('#mapTitle2').val(),
         mapZoom:		18,
         mapCanvasId:	'map-canvas',
-        GMapScriptURL:	'//maps.google.com/maps/api/js?sensor=false&key=',
+        GMapScriptURL:	'https://maps.googleapis.com/maps/api/js?sensor=false&key=',
         map_html:		'',
         map_to_html:	'',
         map_from_html:	'',

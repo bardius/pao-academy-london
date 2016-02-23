@@ -3,28 +3,27 @@
     RewriteBase /
 
     #### Redirect non www to www ####
-    # RewriteCond %{ENV:APPLICATION_ENV} live
-    # RewriteCond %{HTTP_HOST} ^domain.com [NC]
-    # RewriteRule ^(.*)$ http://www.domain.com/$1 [L,R=301]
+    RewriteCond %{HTTP_HOST} ^paobasketball.co.uk [NC]
+    RewriteRule ^(.*)$ http://www.paobasketball.co.uk/$1 [L,R=301]
 
-    # RewriteCond %{HTTP_HOST} ^domain\.co.uk$ [OR]
-    # RewriteCond %{HTTP_HOST} ^www\.domain\.co.uk$
-    # RewriteRule (.*)$ http://www.domain.com/$1 [R=301,L]
+    # RewriteCond %{HTTP_HOST} ^paobasketball\.com$ [OR]
+    # RewriteCond %{HTTP_HOST} ^www\.paobasketball\.com$
+    # RewriteRule (.*)$ http://www.paobasketball.co.uk/$1 [R=301,L]
 
     # Remove trailing slash
     RewriteRule ^(.*)/$ $1 [R=301,L]
 
     #### Prevent hotlinking ####
     # RewriteCond %{HTTP_REFERER} !^$
-    # RewriteCond %{HTTP_REFERER} !^http://(www.)?domain.com/.*$ [NC]
+    # RewriteCond %{HTTP_REFERER} !^http://(www.)?paobasketball.co.uk/.*$ [NC]
     # RewriteRule .(gif|jpg|swf|flv|png)$ / [R=302,L]
 
     #### Force https for certain pages ####
     # RewriteCond %{REQUEST_METHOD} !^POST$
     # RewriteCond %{HTTPS} !=on
-    # RewriteCond %{HTTP_HOST} domain.com [NC]
-    # RewriteCond %{REQUEST_URI} contact-us
-    # RewriteRule ^(.*)$ https://www.domain.com/$1 [L,R=301]
+    # RewriteCond %{HTTP_HOST} paobasketball.co.uk [NC]
+    # RewriteCond %{REQUEST_URI} map
+    # RewriteRule ^(.*)$ https://www.paobasketball.co.uk/$1 [L,R=301]
 
     ErrorDocument 404 /404.html
     ErrorDocument 500 /500.html
