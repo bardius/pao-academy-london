@@ -24,6 +24,18 @@ module.exports = {
             mangle: true, // mangle: Turn on or off mangling
             beautify: false, // beautify: beautify your code for debugging/troubleshooting purposes
             compress: true,
+            /*
+            compress: {
+                sequences: true,
+                dead_code: true,
+                conditionals: true,
+                booleans: true,
+                unused: true,
+                if_return: true,
+                join_vars: true,
+                drop_console: true
+            }
+            */
             // report: 'gzip', // report: Show file size report
             //sourceMap: '<%=config.js.releaseDir%><%=config.js.releaseFile%>.map',
             sourceMappingURL: '/<%=config.js.releaseFile%>.map'
