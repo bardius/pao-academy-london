@@ -606,7 +606,6 @@ footer {
             width: 100%;
 
             p {
-                min-width: 63%;
                 padding: 0 1%;
                 display: inline-block;
                 margin-bottom: 8px;
@@ -618,7 +617,6 @@ footer {
             color: #fff;
             margin: 0;
             padding: 0;
-            float: left;
             position: relative;
             text-align: center;
             border-radius: 50%;
@@ -626,14 +624,19 @@ footer {
             height: 3rem;
             line-height: 3rem;
             font-size: 1.75rem;
+            display: inline-block;
         }
 
         a {
             color: $white-color;
             padding-left: 6px;
-            float: left;
+            padding-top: 9px;
             text-align: left;
             display: inline-block;
+
+            br {
+                display: none;
+            }
 
             &:hover,
             &:focus {
@@ -819,6 +822,19 @@ footer {
             li {
                 p {
                     min-width: 65%;
+
+                    i{
+                        float: left;
+                    }
+
+                    a {
+                        padding-top: 0;
+                        float: left;
+
+                        br {
+                            display: inherit;
+                        }
+                    }
                 }
             }
         }
