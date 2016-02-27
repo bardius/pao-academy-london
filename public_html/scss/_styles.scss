@@ -136,8 +136,10 @@ body {
 .contents-row {
     background-color: $white-color;
     background-color: rgba(255, 255, 255, 0.75);
-    padding-top: rem-calc(20);
-    padding-bottom: rem-calc(20);
+    padding-top: rem-calc(24);
+    padding-bottom: rem-calc(24);
+    padding-left: rem-calc(16);
+    padding-right: rem-calc(16);
 }
 
 .spaced-row{
@@ -417,6 +419,10 @@ header{
     .featured-content {
         list-style: none;
         margin: 0;
+
+        p {
+            font-size: rem-calc(14);
+        }
     }
 }
 
@@ -884,7 +890,7 @@ footer {
         .contact {
             li {
                 p {
-                    min-width: 78%;
+                    min-width: 86%;
                 }
             }
         }
