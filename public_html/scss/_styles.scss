@@ -350,6 +350,7 @@ header{
     a {
         font-size: rem-calc(14);
         font-family: $alt-font-family;
+        letter-spacing: 1px;
 
         &.exit-off-canvas{
             position: relative;
