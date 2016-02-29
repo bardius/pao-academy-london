@@ -35,24 +35,24 @@ module.exports = function (grunt) {
                     modernizrReleaseFile: 'modernizr.min.js',
                     // <%=config.js.scriptFileList%>
                     scriptFileList: [
-                        'public_html/bower_components/jquery/dist/jquery.js',
+                        'bower_components/jquery/dist/jquery.js',
                         // Include only used Foundation 5 scripts if needed instead of the minified full framework ones
-                        'public_html/bower_components/foundation/js/foundation.js',
-                        //'public_html/bower_components/foundation/js/foundation.js',
-                        //'public_html/bower_components/foundation/js/foundation/*.js',
-                        'public_html/js/helpers/environment.js',
-                        'public_html/js/helpers/supports.js',
-                        'public_html/js/helpers/console.js',
-                        'public_html/js/helpers/limit.js',
-                        'public_html/js/helpers/notification-dispatcher.js',
-                        'public_html/js/helpers/smartResize.js',
-                        'public_html/js/libs/mobile/normalized.addressbar.js',
-                        'public_html/js/script.js',
-                        'public_html/js/libs/mailchimp/mc-validate.js'
+                        'bower_components/foundation/js/foundation.js',
+                        //'bower_components/foundation/js/foundation.js',
+                        //'bower_components/foundation/js/foundation/*.js',
+                        'js/helpers/environment.js',
+                        'js/helpers/supports.js',
+                        'js/helpers/console.js',
+                        'js/helpers/limit.js',
+                        'js/helpers/notification-dispatcher.js',
+                        'js/helpers/smartResize.js',
+                        'js/libs/mobile/normalized.addressbar.js',
+                        'js/script.js',
+                        'js/libs/mailchimp/mc-validate.js'
                     ],
                     // <%=config.js.modernizrScriptFile%>
                     modernizrScriptFile: [
-                        'public_html/bower_components/modernizr/modernizr.js'
+                        'bower_components/modernizr/modernizr.js'
                     ]
                 },
                 img: {
@@ -65,15 +65,15 @@ module.exports = function (grunt) {
                 },
                 scss: {
                     // <%= config.scss.path %>
-                    path: 'public_html/scss'
+                    path: 'scss'
                 },
                 f5scss: {
                     // <%= config.f5scss.path %>
-                    path: 'public_html/bower_components/foundation/scss'
+                    path: 'bower_components/foundation/scss'
                 },
                 bower: {
                     // <%= config.bower.path %>
-                    path: './public_html/bower_components'
+                    path: './bower_components'
                 },
                 host: {
                     // <%= config.host.url %>
@@ -85,7 +85,7 @@ module.exports = function (grunt) {
                 },
                 jstests: {
                     // <%= config.jstests.path %>
-                    path: 'public_html/js/tests'
+                    path: 'js/tests'
                 },
                 statix: {
                     // <%= config.statix.path %>
