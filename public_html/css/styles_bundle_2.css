@@ -1,3 +1,72 @@
+@media only screen and (min-width: 40.063em) {
+  html {
+    font-size: 14px;
+  }
+
+  .featured-content-row .orbit-container {
+    margin-top: -43px;
+  }
+
+  .featured-content-row .slider-navigation {
+    padding: 0 44px;
+  }
+
+  .featured-content-row .slider-navigation dd {
+    border-left: 1px solid #095620;
+  }
+
+  .featured-content-row .slider-navigation dd:first-child::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: -2.625rem;
+    border-left: 2.75rem solid transparent;
+    border-top: 2.9375rem solid #0c6d28;
+    height: 2.75rem;
+    width: 1.5rem;
+  }
+
+  .featured-content-row .slider-navigation dd:last-child::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    right: -2.625rem;
+    border-right: 2.75rem solid transparent;
+    border-top: 2.9375rem solid #0c6d28;
+    height: 2.75rem;
+    width: 1.5rem;
+  }
+
+  footer .inline-list.social a {
+    line-height: 35px;
+  }
+
+  footer .contact li p {
+    min-width: 82%;
+  }
+
+  footer .contact li p i {
+    float: left;
+  }
+
+  footer .contact li p a {
+    padding-top: 0;
+    float: left;
+  }
+
+  footer .contact li p a br {
+    display: inherit;
+  }
+}
+
+@media only screen and (min-width: 40.063em) and (max-width: 64em) {
+  .featured-content-row .orbit-container {
+    margin-top: -39px;
+  }
+}
+
 @media only screen and (min-width: 64.063em) {
   html {
     font-size: 16px;
@@ -18,7 +87,7 @@
   }
 
   footer .contact li p {
-    min-width: 78%;
+    min-width: 86%;
   }
 }
 

@@ -80,7 +80,7 @@ body {
   background: #eee;
   color: #000;
   cursor: auto;
-  font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-family: "Verdana", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-style: normal;
   font-weight: normal;
   line-height: 140%;
@@ -2015,7 +2015,7 @@ button, .button {
   border-style: solid;
   border-width: 0;
   cursor: pointer;
-  font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-family: "Verdana", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-weight: normal;
   line-height: normal;
   margin: 0 0 1.25rem;
@@ -4310,7 +4310,7 @@ kbd {
 
 .label {
   display: inline-block;
-  font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-family: "Verdana", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-weight: normal;
   line-height: 1;
   margin-bottom: auto;
@@ -4797,7 +4797,7 @@ ul.pagination li {
 .pricing-table .price {
   background-color: #F6F6F6;
   color: #333333;
-  font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-family: "Verdana", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-size: 2rem;
   font-weight: normal;
   padding: 0.9375rem 1.25rem;
@@ -5141,7 +5141,7 @@ ul.pagination li {
 
 .side-nav {
   display: block;
-  font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-family: "Verdana", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   list-style-position: outside;
   list-style-type: none;
   margin: 0;
@@ -5167,7 +5167,7 @@ ul.pagination li {
 }
 .side-nav li.active > a:first-child:not(.button) {
   color: #18d64f;
-  font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-family: "Verdana", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-weight: normal;
 }
 .side-nav li.divider {
@@ -5320,7 +5320,7 @@ ul.pagination li {
 .sub-nav li {
   color: #999999;
   float: left;
-  font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-family: "Verdana", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-size: 0.875rem;
   font-weight: normal;
   margin-left: 1rem;
@@ -5555,7 +5555,7 @@ table tr td {
   display: block;
   background-color: #EFEFEF;
   color: #222222;
-  font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-family: "Verdana", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-size: 1rem;
   padding: 1rem 2rem;
 }
@@ -9952,8 +9952,10 @@ body {
 .contents-row {
   background-color: #ffffff;
   background-color: rgba(255, 255, 255, 0.75);
-  padding-top: 1.25rem;
-  padding-bottom: 1.25rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 .spaced-row {
@@ -10127,6 +10129,7 @@ header h3 {
 .left-off-canvas-menu a {
   font-size: 0.875rem;
   font-family: "furoreregular", Verdana, Tahoma, Arial, sans-serif;
+  letter-spacing: 1px;
 }
 .left-off-canvas-menu a.exit-off-canvas {
   position: relative;
@@ -10177,6 +10180,9 @@ header h3 {
 .featured-content-row .featured-content {
   list-style: none;
   margin: 0;
+}
+.featured-content-row .featured-content p {
+  font-size: 0.875rem;
 }
 
 /*-------------------------------------------
@@ -10315,7 +10321,6 @@ footer .contact li {
   width: 100%;
 }
 footer .contact li p {
-  min-width: 63%;
   padding: 0 1%;
   display: inline-block;
   margin-bottom: 8px;
@@ -10325,7 +10330,6 @@ footer .contact i {
   color: #fff;
   margin: 0;
   padding: 0;
-  float: left;
   position: relative;
   text-align: center;
   border-radius: 50%;
@@ -10333,13 +10337,17 @@ footer .contact i {
   height: 3rem;
   line-height: 3rem;
   font-size: 1.75rem;
+  display: inline-block;
 }
 footer .contact a {
   color: #ffffff;
   padding-left: 6px;
-  float: left;
+  padding-top: 9px;
   text-align: left;
   display: inline-block;
+}
+footer .contact a br {
+  display: none;
 }
 footer .contact a:hover, footer .contact a:focus {
   color: #ffffff;
@@ -10465,7 +10473,17 @@ footer .logo {
     line-height: 35px;
   }
   footer .contact li p {
-    min-width: 65%;
+    min-width: 82%;
+  }
+  footer .contact li p i {
+    float: left;
+  }
+  footer .contact li p a {
+    padding-top: 0;
+    float: left;
+  }
+  footer .contact li p a br {
+    display: inherit;
   }
 }
 @media only screen and (min-width: 40.063em) and (max-width: 64em) {
@@ -10492,7 +10510,7 @@ footer .logo {
   }
 
   footer .contact li p {
-    min-width: 78%;
+    min-width: 86%;
   }
 }
 @media print {
