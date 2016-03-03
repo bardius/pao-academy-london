@@ -25,6 +25,9 @@
     # RewriteCond %{REQUEST_URI} map
     # RewriteRule ^(.*)$ https://www.paobasketball.co.uk/$1 [L,R=301]
 
+    ErrorDocument 400 /400.html
+    ErrorDocument 401 /401.html
+    ErrorDocument 403 /403.html
     ErrorDocument 404 /404.html
     ErrorDocument 500 /500.html
 
@@ -50,7 +53,7 @@
 ServerSignature Off
 
 #### disable directory browsing
-Options All -Indexes
+#Options All -Indexes
 
 #### Set the timezone
 # SetEnv TZ Europe/London
@@ -88,6 +91,7 @@ AddType text/xsl xsl
 	AddOutputFilterByType DEFLATE text/javascript application/javascript application/x-javascript application/json
 	AddOutputFilterByType DEFLATE application/x-font-ttf application/x-font-otf
 	AddOutputFilterByType DEFLATE font/truetype font/opentype
+	AddOutputFilterByType DEFLATE image/x-icon
 </ifModule>
 
 #### Cache-Control Headers ####
@@ -98,15 +102,19 @@ AddType text/xsl xsl
 
   <filesMatch "\.(ico|jpe?g|png|gif|swf)$">
     Header set Cache-Control "public"
+    Header set Connection keep-alive
   </filesMatch>
   <filesMatch "\.(css)$">
     Header set Cache-Control "public"
+    Header set Connection keep-alive
   </filesMatch>
   <filesMatch "\.(js)$">
     Header set Cache-Control "public"
+    Header set Connection keep-alive
   </filesMatch>
   <filesMatch "\.(x?html?|php)$">
     Header set Cache-Control "public, must-revalidate"
+    Header set Connection keep-alive
   </filesMatch>
 </ifModule>
 

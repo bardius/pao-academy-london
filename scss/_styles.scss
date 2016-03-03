@@ -643,6 +643,10 @@ footer {
 
             br {
                 display: none;
+
+                &.display {
+                    display: inherit;
+                }
             }
 
             &:hover,
