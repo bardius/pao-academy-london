@@ -1,55 +1,45 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>*|MC:SUBJECT|*</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width"/>
-    <meta property="og:title" content="*|MC:SUBJECT|*" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta property="og:title" content="*|MC:SUBJECT|*">
+
 
     <style type="text/css">
-
-        /**********************************************
-        * Ink v1.0.5 - Copyright 2013 ZURB Inc        *
-        **********************************************/
-
-        /* Client-specific Styles & Reset */
-
         #outlook a {
-            padding:0;
+            padding: 0;
         }
 
-        body{
-            width:100% !important;
+        body {
+            width: 100% !important;
             min-width: 100%;
-            -webkit-text-size-adjust:100%;
-            -ms-text-size-adjust:100%;
-            margin:0;
-            padding:0;
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+            margin: 0;
+            padding: 0;
         }
 
         .ExternalClass {
-            width:100%;
+            width: 100%;
         }
 
-        .ExternalClass,
-        .ExternalClass p,
-        .ExternalClass span,
-        .ExternalClass font,
-        .ExternalClass td,
-        .ExternalClass div {
+        .ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div {
             line-height: 100%;
         }
 
         #backgroundTable {
-            margin:0;
-            padding:0;
-            width:100% !important;
+            margin: 0;
+            padding: 0;
+            width: 100% !important;
             line-height: 100% !important;
         }
 
         img {
-            outline:none;
-            text-decoration:none;
+            outline: none;
+            text-decoration: none;
             -ms-interpolation-mode: bicubic;
             width: auto;
             max-width: 100%;
@@ -97,8 +87,6 @@
             border: none;
         }
 
-        /* Responsive Grid */
-
         table.body {
             height: 100%;
             width: 100%;
@@ -125,20 +113,15 @@
             position: relative;
         }
 
-        table.columns,
-        table.column {
+        table.columns, table.column {
             margin: 0 auto;
         }
 
-        table.columns td,
-        table.column td {
+        table.columns td, table.column td {
             padding: 0px 0px 10px;
         }
 
-        table.columns td.sub-columns,
-        table.column td.sub-columns,
-        table.columns td.sub-column,
-        table.column td.sub-column {
+        table.columns td.sub-columns, table.column td.sub-columns, table.columns td.sub-column, table.column td.sub-column {
             padding-right: 10px;
         }
 
@@ -146,86 +129,245 @@
             min-width: 0px;
         }
 
-        table.row td.last,
-        table.container td.last {
+        table.row td.last, table.container td.last {
             padding-right: 0px;
         }
 
-        table.one { width: 30px; }
-        table.two { width: 80px; }
-        table.three { width: 130px; }
-        table.four { width: 180px; }
-        table.five { width: 230px; }
-        table.six { width: 280px; }
-        table.seven { width: 330px; }
-        table.eight { width: 380px; }
-        table.nine { width: 430px; }
-        table.ten { width: 480px; }
-        table.eleven { width: 530px; }
-        table.twelve { width: 580px; }
+        table.one {
+            width: 30px;
+        }
 
-        table.one center { min-width: 30px; }
-        table.two center { min-width: 80px; }
-        table.three center { min-width: 130px; }
-        table.four center { min-width: 180px; }
-        table.five center { min-width: 230px; }
-        table.six center { min-width: 280px; }
-        table.seven center { min-width: 330px; }
-        table.eight center { min-width: 380px; }
-        table.nine center { min-width: 430px; }
-        table.ten center { min-width: 480px; }
-        table.eleven center { min-width: 530px; }
-        table.twelve center { min-width: 580px; }
+        table.two {
+            width: 80px;
+        }
 
-        table.one .panel center { min-width: 10px; }
-        table.two .panel center { min-width: 60px; }
-        table.three .panel center { min-width: 110px; }
-        table.four .panel center { min-width: 160px; }
-        table.five .panel center { min-width: 210px; }
-        table.six .panel center { min-width: 260px; }
-        table.seven .panel center { min-width: 310px; }
-        table.eight .panel center { min-width: 360px; }
-        table.nine .panel center { min-width: 410px; }
-        table.ten .panel center { min-width: 460px; }
-        table.eleven .panel center { min-width: 510px; }
-        table.twelve .panel center { min-width: 560px; }
+        table.three {
+            width: 130px;
+        }
 
-        .body .columns td.one,
-        .body .column td.one { width: 8.333333%; }
-        .body .columns td.two,
-        .body .column td.two { width: 16.666666%; }
-        .body .columns td.three,
-        .body .column td.three { width: 25%; }
-        .body .columns td.four,
-        .body .column td.four { width: 33.333333%; }
-        .body .columns td.five,
-        .body .column td.five { width: 41.666666%; }
-        .body .columns td.six,
-        .body .column td.six { width: 50%; }
-        .body .columns td.seven,
-        .body .column td.seven { width: 58.333333%; }
-        .body .columns td.eight,
-        .body .column td.eight { width: 66.666666%; }
-        .body .columns td.nine,
-        .body .column td.nine { width: 75%; }
-        .body .columns td.ten,
-        .body .column td.ten { width: 83.333333%; }
-        .body .columns td.eleven,
-        .body .column td.eleven { width: 91.666666%; }
-        .body .columns td.twelve,
-        .body .column td.twelve { width: 100%; }
+        table.four {
+            width: 180px;
+        }
 
-        td.offset-by-one { padding-left: 50px; }
-        td.offset-by-two { padding-left: 100px; }
-        td.offset-by-three { padding-left: 150px; }
-        td.offset-by-four { padding-left: 200px; }
-        td.offset-by-five { padding-left: 250px; }
-        td.offset-by-six { padding-left: 300px; }
-        td.offset-by-seven { padding-left: 350px; }
-        td.offset-by-eight { padding-left: 400px; }
-        td.offset-by-nine { padding-left: 450px; }
-        td.offset-by-ten { padding-left: 500px; }
-        td.offset-by-eleven { padding-left: 550px; }
+        table.five {
+            width: 230px;
+        }
+
+        table.six {
+            width: 280px;
+        }
+
+        table.seven {
+            width: 330px;
+        }
+
+        table.eight {
+            width: 380px;
+        }
+
+        table.nine {
+            width: 430px;
+        }
+
+        table.ten {
+            width: 480px;
+        }
+
+        table.eleven {
+            width: 530px;
+        }
+
+        table.twelve {
+            width: 580px;
+        }
+
+        table.one center {
+            min-width: 30px;
+        }
+
+        table.two center {
+            min-width: 80px;
+        }
+
+        table.three center {
+            min-width: 130px;
+        }
+
+        table.four center {
+            min-width: 180px;
+        }
+
+        table.five center {
+            min-width: 230px;
+        }
+
+        table.six center {
+            min-width: 280px;
+        }
+
+        table.seven center {
+            min-width: 330px;
+        }
+
+        table.eight center {
+            min-width: 380px;
+        }
+
+        table.nine center {
+            min-width: 430px;
+        }
+
+        table.ten center {
+            min-width: 480px;
+        }
+
+        table.eleven center {
+            min-width: 530px;
+        }
+
+        table.twelve center {
+            min-width: 580px;
+        }
+
+        table.one .panel center {
+            min-width: 10px;
+        }
+
+        table.two .panel center {
+            min-width: 60px;
+        }
+
+        table.three .panel center {
+            min-width: 110px;
+        }
+
+        table.four .panel center {
+            min-width: 160px;
+        }
+
+        table.five .panel center {
+            min-width: 210px;
+        }
+
+        table.six .panel center {
+            min-width: 260px;
+        }
+
+        table.seven .panel center {
+            min-width: 310px;
+        }
+
+        table.eight .panel center {
+            min-width: 360px;
+        }
+
+        table.nine .panel center {
+            min-width: 410px;
+        }
+
+        table.ten .panel center {
+            min-width: 460px;
+        }
+
+        table.eleven .panel center {
+            min-width: 510px;
+        }
+
+        table.twelve .panel center {
+            min-width: 560px;
+        }
+
+        .body .columns td.one, .body .column td.one {
+            width: 8.333333%;
+        }
+
+        .body .columns td.two, .body .column td.two {
+            width: 16.666666%;
+        }
+
+        .body .columns td.three, .body .column td.three {
+            width: 25%;
+        }
+
+        .body .columns td.four, .body .column td.four {
+            width: 33.333333%;
+        }
+
+        .body .columns td.five, .body .column td.five {
+            width: 41.666666%;
+        }
+
+        .body .columns td.six, .body .column td.six {
+            width: 50%;
+        }
+
+        .body .columns td.seven, .body .column td.seven {
+            width: 58.333333%;
+        }
+
+        .body .columns td.eight, .body .column td.eight {
+            width: 66.666666%;
+        }
+
+        .body .columns td.nine, .body .column td.nine {
+            width: 75%;
+        }
+
+        .body .columns td.ten, .body .column td.ten {
+            width: 83.333333%;
+        }
+
+        .body .columns td.eleven, .body .column td.eleven {
+            width: 91.666666%;
+        }
+
+        .body .columns td.twelve, .body .column td.twelve {
+            width: 100%;
+        }
+
+        td.offset-by-one {
+            padding-left: 50px;
+        }
+
+        td.offset-by-two {
+            padding-left: 100px;
+        }
+
+        td.offset-by-three {
+            padding-left: 150px;
+        }
+
+        td.offset-by-four {
+            padding-left: 200px;
+        }
+
+        td.offset-by-five {
+            padding-left: 250px;
+        }
+
+        td.offset-by-six {
+            padding-left: 300px;
+        }
+
+        td.offset-by-seven {
+            padding-left: 350px;
+        }
+
+        td.offset-by-eight {
+            padding-left: 400px;
+        }
+
+        td.offset-by-nine {
+            padding-left: 450px;
+        }
+
+        td.offset-by-ten {
+            padding-left: 500px;
+        }
+
+        td.offset-by-eleven {
+            padding-left: 550px;
+        }
 
         td.expander {
             visibility: hidden;
@@ -233,27 +375,18 @@
             padding: 0 !important;
         }
 
-        table.columns .text-pad,
-        table.column .text-pad {
+        table.columns .text-pad, table.column .text-pad {
             padding-left: 10px;
             padding-right: 10px;
         }
 
-        table.columns .left-text-pad,
-        table.columns .text-pad-left,
-        table.column .left-text-pad,
-        table.column .text-pad-left {
+        table.columns .left-text-pad, table.columns .text-pad-left, table.column .left-text-pad, table.column .text-pad-left {
             padding-left: 10px;
         }
 
-        table.columns .right-text-pad,
-        table.columns .text-pad-right,
-        table.column .right-text-pad,
-        table.column .text-pad-right {
+        table.columns .right-text-pad, table.columns .text-pad-right, table.column .right-text-pad, table.column .text-pad-right {
             padding-right: 10px;
         }
-
-        /* Block Grid */
 
         .block-grid {
             width: 100%;
@@ -262,49 +395,42 @@
 
         .block-grid td {
             display: inline-block;
-            padding:10px;
+            padding: 10px;
         }
 
         .two-up td {
-            width:270px;
+            width: 270px;
         }
 
         .three-up td {
-            width:173px;
+            width: 173px;
         }
 
         .four-up td {
-            width:125px;
+            width: 125px;
         }
 
         .five-up td {
-            width:96px;
+            width: 96px;
         }
 
         .six-up td {
-            width:76px;
+            width: 76px;
         }
 
         .seven-up td {
-            width:62px;
+            width: 62px;
         }
 
         .eight-up td {
-            width:52px;
+            width: 52px;
         }
-
-        /* Alignment & Visibility Classes */
 
         table.center, td.center {
             text-align: center;
         }
 
-        h1.center,
-        h2.center,
-        h3.center,
-        h4.center,
-        h5.center,
-        h6.center {
+        h1.center, h2.center, h3.center, h4.center, h5.center, h6.center {
             text-align: center;
         }
 
@@ -319,18 +445,15 @@
             float: none;
         }
 
-        .show-for-small,
-        .hide-for-desktop {
+        .show-for-small, .hide-for-desktop {
             display: none;
         }
-
-        /* Typography */
 
         body, table.body, h1, h2, h3, h4, h5, h6, p, td {
             color: #222222;
             font-family: "Helvetica", "Arial", sans-serif;
             font-weight: normal;
-            padding:0;
+            padding: 0;
             margin: 0;
             text-align: left;
             line-height: 1.3;
@@ -340,17 +463,38 @@
             word-break: normal;
         }
 
-        h1 {font-size: 40px;}
-        h2 {font-size: 36px;}
-        h3 {font-size: 32px;}
-        h4 {font-size: 28px;}
-        h5 {font-size: 24px;}
-        h6 {font-size: 20px;}
-        body, table.body, p, td {font-size: 14px;line-height:19px;}
+        h1 {
+            font-size: 40px;
+        }
+
+        h2 {
+            font-size: 36px;
+        }
+
+        h3 {
+            font-size: 32px;
+        }
+
+        h4 {
+            font-size: 28px;
+        }
+
+        h5 {
+            font-size: 24px;
+        }
+
+        h6 {
+            font-size: 20px;
+        }
+
+        body, table.body, p, td {
+            font-size: 14px;
+            line-height: 19px;
+        }
 
         p.lead, p.lede, p.leed {
             font-size: 18px;
-            line-height:21px;
+            line-height: 21px;
         }
 
         p {
@@ -378,34 +522,17 @@
             color: #0c6d28 !important;
         }
 
-        h1 a,
-        h2 a,
-        h3 a,
-        h4 a,
-        h5 a,
-        h6 a {
+        h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
             color: #0c6d28;
         }
 
-        h1 a:active,
-        h2 a:active,
-        h3 a:active,
-        h4 a:active,
-        h5 a:active,
-        h6 a:active {
+        h1 a:active, h2 a:active, h3 a:active, h4 a:active, h5 a:active, h6 a:active {
             color: #0c6d28 !important;
         }
 
-        h1 a:visited,
-        h2 a:visited,
-        h3 a:visited,
-        h4 a:visited,
-        h5 a:visited,
-        h6 a:visited {
+        h1 a:visited, h2 a:visited, h3 a:visited, h4 a:visited, h5 a:visited, h6 a:visited {
             color: #0c6d28 !important;
         }
-
-        /* Panels */
 
         .panel {
             background: #f2f2f2;
@@ -421,22 +548,12 @@
             padding-bottom: 0;
         }
 
-        /* Buttons */
-
-        table.button,
-        table.tiny-button,
-        table.small-button,
-        table.medium-button,
-        table.large-button {
+        table.button, table.tiny-button, table.small-button, table.medium-button, table.large-button {
             width: 100%;
             overflow: hidden;
         }
 
-        table.button td,
-        table.tiny-button td,
-        table.small-button td,
-        table.medium-button td,
-        table.large-button td {
+        table.button td, table.tiny-button td, table.small-button td, table.medium-button td, table.large-button td {
             display: block;
             width: auto !important;
             text-align: center;
@@ -462,11 +579,7 @@
             padding: 21px 0 18px;
         }
 
-        table.button td a,
-        table.tiny-button td a,
-        table.small-button td a,
-        table.medium-button td a,
-        table.large-button td a {
+        table.button td a, table.tiny-button td a, table.small-button td a, table.medium-button td a, table.large-button td a {
             font-weight: bold;
             text-decoration: none;
             font-family: Helvetica, Arial, sans-serif;
@@ -491,41 +604,19 @@
             font-size: 24px;
         }
 
-        table.button:hover td,
-        table.button:visited td,
-        table.button:active td {
+        table.button:hover td, table.button:visited td, table.button:active td {
             background: #2795b6 !important;
         }
 
-        table.button:hover td a,
-        table.button:visited td a,
-        table.button:active td a {
+        table.button:hover td a, table.button:visited td a, table.button:active td a {
             color: #fff !important;
         }
 
-        table.button:hover td,
-        table.tiny-button:hover td,
-        table.small-button:hover td,
-        table.medium-button:hover td,
-        table.large-button:hover td {
+        table.button:hover td, table.tiny-button:hover td, table.small-button:hover td, table.medium-button:hover td, table.large-button:hover td {
             background: #2795b6 !important;
         }
 
-        table.button:hover td a,
-        table.button:active td a,
-        table.button td a:visited,
-        table.tiny-button:hover td a,
-        table.tiny-button:active td a,
-        table.tiny-button td a:visited,
-        table.small-button:hover td a,
-        table.small-button:active td a,
-        table.small-button td a:visited,
-        table.medium-button:hover td a,
-        table.medium-button:active td a,
-        table.medium-button td a:visited,
-        table.large-button:hover td a,
-        table.large-button:active td a,
-        table.large-button td a:visited {
+        table.button:hover td a, table.button:active td a, table.button td a:visited, table.tiny-button:hover td a, table.tiny-button:active td a, table.tiny-button td a:visited, table.small-button:hover td a, table.small-button:active td a, table.small-button td a:visited, table.medium-button:hover td a, table.medium-button:active td a, table.medium-button td a:visited, table.large-button:hover td a, table.large-button:active td a, table.large-button td a:visited {
             color: #ffffff !important;
         }
 
@@ -544,9 +635,7 @@
             color: #555;
         }
 
-        table.secondary:hover td a,
-        table.secondary td a:visited,
-        table.secondary:active td a {
+        table.secondary:hover td a, table.secondary td a:visited, table.secondary:active td a {
             color: #555 !important;
         }
 
@@ -580,41 +669,50 @@
             border-radius: 500px;
         }
 
-        /* Outlook First */
-
         body.outlook p {
             display: inline !important;
         }
 
-        /*  Media Queries */
-
         @media only screen and (max-width: 600px) {
-
-            table[class="body"] img {
+            table[class=body] img {
                 width: auto !important;
                 height: auto !important;
             }
 
-            table[class="body"] center {
+        }
+
+        @media only screen and (max-width: 600px) {
+            table[class=body] center {
                 min-width: 0 !important;
             }
 
-            table[class="body"] .container {
+        }
+
+        @media only screen and (max-width: 600px) {
+            table[class=body] .container {
                 width: 95% !important;
             }
 
-            table[class="body"] .row {
+        }
+
+        @media only screen and (max-width: 600px) {
+            table[class=body] .row {
                 width: 100% !important;
                 display: block !important;
             }
 
-            table[class="body"] .wrapper {
+        }
+
+        @media only screen and (max-width: 600px) {
+            table[class=body] .wrapper {
                 display: block !important;
                 padding-right: 0 !important;
             }
 
-            table[class="body"] .columns,
-            table[class="body"] .column {
+        }
+
+        @media only screen and (max-width: 600px) {
+            table[class=body] .columns, table[class=body] .column {
                 table-layout: fixed !important;
                 float: none !important;
                 width: 100% !important;
@@ -623,85 +721,150 @@
                 display: block !important;
             }
 
-            table[class="body"] .wrapper.first .columns,
-            table[class="body"] .wrapper.first .column {
+        }
+
+        @media only screen and (max-width: 600px) {
+            table[class=body] .wrapper.first .columns, table[class=body] .wrapper.first .column {
                 display: table !important;
             }
 
-            table[class="body"] table.columns td,
-            table[class="body"] table.column td {
+        }
+
+        @media only screen and (max-width: 600px) {
+            table[class=body] table.columns td, table[class=body] table.column td {
                 width: 100% !important;
             }
 
-            table[class="body"] .columns td.one,
-            table[class="body"] .column td.one { width: 8.333333% !important; }
-            table[class="body"] .columns td.two,
-            table[class="body"] .column td.two { width: 16.666666% !important; }
-            table[class="body"] .columns td.three,
-            table[class="body"] .column td.three { width: 25% !important; }
-            table[class="body"] .columns td.four,
-            table[class="body"] .column td.four { width: 33.333333% !important; }
-            table[class="body"] .columns td.five,
-            table[class="body"] .column td.five { width: 41.666666% !important; }
-            table[class="body"] .columns td.six,
-            table[class="body"] .column td.six { width: 50% !important; }
-            table[class="body"] .columns td.seven,
-            table[class="body"] .column td.seven { width: 58.333333% !important; }
-            table[class="body"] .columns td.eight,
-            table[class="body"] .column td.eight { width: 66.666666% !important; }
-            table[class="body"] .columns td.nine,
-            table[class="body"] .column td.nine { width: 75% !important; }
-            table[class="body"] .columns td.ten,
-            table[class="body"] .column td.ten { width: 83.333333% !important; }
-            table[class="body"] .columns td.eleven,
-            table[class="body"] .column td.eleven { width: 91.666666% !important; }
-            table[class="body"] .columns td.twelve,
-            table[class="body"] .column td.twelve { width: 100% !important; }
+        }
 
-            table[class="body"] td.offset-by-one,
-            table[class="body"] td.offset-by-two,
-            table[class="body"] td.offset-by-three,
-            table[class="body"] td.offset-by-four,
-            table[class="body"] td.offset-by-five,
-            table[class="body"] td.offset-by-six,
-            table[class="body"] td.offset-by-seven,
-            table[class="body"] td.offset-by-eight,
-            table[class="body"] td.offset-by-nine,
-            table[class="body"] td.offset-by-ten,
-            table[class="body"] td.offset-by-eleven {
+        @media only screen and (max-width: 600px) {
+            table[class=body] .columns td.one, table[class=body] .column td.one {
+                width: 8.333333% !important;
+            }
+
+        }
+
+        @media only screen and (max-width: 600px) {
+            table[class=body] .columns td.two, table[class=body] .column td.two {
+                width: 16.666666% !important;
+            }
+
+        }
+
+        @media only screen and (max-width: 600px) {
+            table[class=body] .columns td.three, table[class=body] .column td.three {
+                width: 25% !important;
+            }
+
+        }
+
+        @media only screen and (max-width: 600px) {
+            table[class=body] .columns td.four, table[class=body] .column td.four {
+                width: 33.333333% !important;
+            }
+
+        }
+
+        @media only screen and (max-width: 600px) {
+            table[class=body] .columns td.five, table[class=body] .column td.five {
+                width: 41.666666% !important;
+            }
+
+        }
+
+        @media only screen and (max-width: 600px) {
+            table[class=body] .columns td.six, table[class=body] .column td.six {
+                width: 50% !important;
+            }
+
+        }
+
+        @media only screen and (max-width: 600px) {
+            table[class=body] .columns td.seven, table[class=body] .column td.seven {
+                width: 58.333333% !important;
+            }
+
+        }
+
+        @media only screen and (max-width: 600px) {
+            table[class=body] .columns td.eight, table[class=body] .column td.eight {
+                width: 66.666666% !important;
+            }
+
+        }
+
+        @media only screen and (max-width: 600px) {
+            table[class=body] .columns td.nine, table[class=body] .column td.nine {
+                width: 75% !important;
+            }
+
+        }
+
+        @media only screen and (max-width: 600px) {
+            table[class=body] .columns td.ten, table[class=body] .column td.ten {
+                width: 83.333333% !important;
+            }
+
+        }
+
+        @media only screen and (max-width: 600px) {
+            table[class=body] .columns td.eleven, table[class=body] .column td.eleven {
+                width: 91.666666% !important;
+            }
+
+        }
+
+        @media only screen and (max-width: 600px) {
+            table[class=body] .columns td.twelve, table[class=body] .column td.twelve {
+                width: 100% !important;
+            }
+
+        }
+
+        @media only screen and (max-width: 600px) {
+            table[class=body] td.offset-by-one, table[class=body] td.offset-by-two, table[class=body] td.offset-by-three, table[class=body] td.offset-by-four, table[class=body] td.offset-by-five, table[class=body] td.offset-by-six, table[class=body] td.offset-by-seven, table[class=body] td.offset-by-eight, table[class=body] td.offset-by-nine, table[class=body] td.offset-by-ten, table[class=body] td.offset-by-eleven {
                 padding-left: 0 !important;
             }
 
-            table[class="body"] table.columns td.expander {
+        }
+
+        @media only screen and (max-width: 600px) {
+            table[class=body] table.columns td.expander {
                 width: 1px !important;
             }
 
-            table[class="body"] .right-text-pad,
-            table[class="body"] .text-pad-right {
+        }
+
+        @media only screen and (max-width: 600px) {
+            table[class=body] .right-text-pad, table[class=body] .text-pad-right {
                 padding-left: 10px !important;
             }
 
-            table[class="body"] .left-text-pad,
-            table[class="body"] .text-pad-left {
+        }
+
+        @media only screen and (max-width: 600px) {
+            table[class=body] .left-text-pad, table[class=body] .text-pad-left {
                 padding-right: 10px !important;
             }
 
-            table[class="body"] .hide-for-small,
-            table[class="body"] .show-for-desktop {
+        }
+
+        @media only screen and (max-width: 600px) {
+            table[class=body] .hide-for-small, table[class=body] .show-for-desktop {
                 display: none !important;
             }
 
-            table[class="body"] .show-for-small,
-            table[class="body"] .hide-for-desktop {
+        }
+
+        @media only screen and (max-width: 600px) {
+            table[class=body] .show-for-small, table[class=body] .hide-for-desktop {
                 display: inherit !important;
             }
-        }
-    </style>
 
-    <style type="text/css">
-        /* Your custom styles go here */
-        html{
-            font-family: "Helvetica Neue","Helvetica",Helvetica,Arial,serif;
+        }
+
+        html {
+            font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, serif;
         }
 
         body, table.body, p, td {
@@ -717,57 +880,57 @@
             background-color: #FFFFFF;
         }
 
-        .twelve.column-with-padding{
+        .twelve.column-with-padding {
             width: 540px;
         }
 
-        h1, h2, h3, h4{
+        h1, h2, h3, h4 {
             font-weight: bold;
             line-height: 1;
             text-transform: uppercase;
             margin-bottom: 14px;
         }
 
-        a, a:hover, h3, h4, h5, h6{
-            color: #0c6d28!important;
+        a, a:hover, h3, h4, h5, h6 {
+            color: #0c6d28 !important;
         }
 
-        h1{
+        h1 {
             font-size: 32px;
             text-align: center;
-            color: #0c6d28!important;
+            color: #0c6d28 !important;
         }
 
-        h2{
+        h2 {
             font-size: 16px;
         }
 
-        h3{
+        h3 {
             font-size: 20px;
         }
 
-        h4{
+        h4 {
             font-size: 26px;
         }
 
-        h5{
+        h5 {
             font-size: 26px;
-            font-style: italic
+            font-style: italic;
         }
 
-        h6{
+        h6 {
             font-size: 14px;
             font-weight: normal;
             text-align: right;
-            font-family: Georgia,serif;
+            font-family: Georgia, serif;
         }
 
-        .header{
-            height:138px;
+        .header {
+            height: 138px;
             background: #FFFFFF;
         }
 
-        .header .wrapper{
+        .header .wrapper {
             padding-top: 0;
         }
 
@@ -783,24 +946,24 @@
         }
 
         table.button:hover td, table.tiny-button:hover td, table.small-button:hover td, table.medium-button:hover td, table.large-button:hover td {
-            background: none repeat 0 0 #000!important;
+            background: none repeat 0 0 #000 !important;
             border: 1px solid #000;
             color: #FFF;
         }
 
-        table.button td a, table.tiny-button td a, table.small-button td a, table.medium-button td a, table.large-button td a{
+        table.button td a, table.tiny-button td a, table.small-button td a, table.medium-button td a, table.large-button td a {
             text-transform: uppercase;
             font-size: 12px;
             font-weight: bold;
             color: #FFF;
         }
 
-        table.button:hover td a, table.tiny-button:hover td a, table.small-button:hover td a, table.medium-button:hover td a, table.large-button:hover td a{
+        table.button:hover td a, table.tiny-button:hover td a, table.small-button:hover td a, table.medium-button:hover td a, table.large-button:hover td a {
             text-decoration: underline;
             color: #FFF;
         }
 
-        img.spaced{
+        img.spaced {
             padding: 0 6px 6px 0;
         }
 
@@ -815,13 +978,13 @@
             background-color: #0c6d28;
         }
 
-        .preheaderContent td{
-            color: #FFFFFF!important;
+        .preheaderContent td {
+            color: #FFFFFF !important;
             font-size: 12px;
         }
 
-        .preheaderContent a{
-            color: #FFFFFF!important;
+        .preheaderContent a {
+            color: #FFFFFF !important;
             text-decoration: underline;
         }
 
@@ -829,12 +992,12 @@
             background-color: #FFFFFF;
         }
 
-        .footer td{
+        .footer td {
             color: #0c6d28;
             font-size: 14px;
         }
 
-        .footer a{
+        .footer a {
             text-decoration: underline;
         }
 
@@ -844,248 +1007,263 @@
 
         .std_social {
             text-align: center;
-            color: #FFFFFF!important;
+            color: #FFFFFF !important;
         }
 
-        .std_social a{
+        .std_social a {
             font-size: 12px;
-            color: #FFFFFF!important;
+            color: #FFFFFF !important;
             text-decoration: underline;
         }
 
         .sticky {
-            /* General */
-            padding: 8px 24px!important;
-            /* Border */
-            border:1px #E8Ds47 solid;
-            /* Shadow */
-            -moz-box-shadow:0px 0px 6px 1px #333333;
-            -webkit-box-shadow:0px 0px 6px 1px #333333;
-            box-shadow:0px 0px 6px 1px #333333;
-            /* Background */
-            background: #fefdca; /* Old browsers */
-            background: -moz-linear-gradient(top, #fefdca 0%, #f7f381 100%); /* FF3.6+ */
-            background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fefdca), color-stop(100%,#f7f381)); /* Chrome,Safari4+ */
-            background: -webkit-linear-gradient(top, #fefdca 0%,#f7f381 100%); /* Chrome10+,Safari5.1+ */
-            background: -o-linear-gradient(top, #fefdca 0%,#f7f381 100%); /* Opera11.10+ */
-            background: -ms-linear-gradient(top, #fefdca 0%,#f7f381 100%); /* IE10+ */
-            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefdca', endColorstr='#f7f381',GradientType=0 ); /* IE6-9 */
-            background: linear-gradient(top, #fefdca 0%,#f7f381 100%); /* W3C; A catch-all for everything else */
+            padding: 8px 24px !important;
+            border: 1px #E8Ds47 solid;
+            -moz-box-shadow: 0px 0px 6px 1px #333333;
+            -webkit-box-shadow: 0px 0px 6px 1px #333333;
+            box-shadow: 0px 0px 6px 1px #333333;
+            background: linear-gradient(top, #fefdca 0%, #f7f381 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fefdca', endColorstr='#f7f381', GradientType=0);
         }
     </style>
 </head>
 
 <body leftmargin="0" marginwidth="0" topmargin="0" marginheight="0" offset="0">
-    <table class="body">
-        <tr>
-            <td class="center" align="center" valign="top">
-                <center>
-                    <table class="row header">
-                        <tr>
-                            <td>
-                                <table class="container">
-                                    <tr>
-                                        <td class="wrapper last">
+<table class="body">
+    <tr>
+        <td class="center" align="center" valign="top">
+            <center>
+                <table class="row header">
+                    <tr>
+                        <td>
+                            <table class="container">
+                                <tr>
+                                    <td class="wrapper last">
 
-                                            <table class="twelve columns">
-                                                <tr>
-                                                    <td style="padding:18px 0;" class="six sub-columns">
-                                                        <a href="http://www.domainname.com" target="_blank">
-                                                            <img src="http://pao-academy.the-web-dev.ninja/images/site_assets/site-logo.png" alt="PAO BC Academy London" />
-                                                        </a>
-                                                    </td>
-                                                    <td class="six sub-columns last" style="padding:0 0 0 10px; text-align:right; vertical-align:middle;">
-                                                        <h1 style="text-align: right">PAO BC Academy London</h1>
-                                                    </td>
-                                                    <td class="expander"></td>
-                                                </tr>
-                                            </table>
+                                        <table class="twelve columns">
+                                            <tr>
+                                                <td style="padding:18px 0;" class="twelve sub-columns last"
+                                                    style="text-align: center">
+                                                    <a style="display: inline-block;"
+                                                       href="http://www.paobasketball.co.uk" target="_blank">
+                                                        <img
+                                                            src="http://www.paobasketball.co.uk/images/site_assets/site-logo.png"
+                                                            alt="PAO BC Academy London">
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="twelve sub-columns last"
+                                                    style="padding:0 0 0 10px; text-align:right; vertical-align:middle;">
+                                                    <h1 style="text-align: center">PAO BC Academy London</h1>
+                                                </td>
+                                                <td class="expander"></td>
+                                            </tr>
+                                        </table>
 
-                                        </td>
-                                    </tr>
-                                </table>
-                            </td>
-                        </tr>
-                    </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
 
-                    <br />
+                <br>
 
-                    <table class="container bodyContent">
-                        <tr>
-                            <td>
-                                <!-- content start -->
-                                <table class="row">
-                                    <tr>
-                                        <td class="wrapper last">
+                <table class="container bodyContent">
+                    <tr>
+                        <td>
+                            <!-- content start -->
+                            <table class="row">
+                                <tr>
+                                    <td class="wrapper last">
 
-                                            <!-- // Begin Module: Standard Content \\ -->
-                                            <table class="twelve columns">
-                                                <tr>
-                                                    <td style="padding: 10px 20px">
-                                                        <div mc:edit="std_content00">
-                                                            <img style="width: 100%!important" width="580" height="313" src="http://pao-academy.the-web-dev.ninja/images/site_assets/pao-logo-kit.jpg" />
-                                                        </div>
-                                                    </td>
-                                                    <td class="expander"></td>
-                                                </tr>
-                                            </table>
-                                            <!-- // End Module: Standard Content \\ -->
+                                        <!-- // Begin Module: Standard Content \\ -->
+                                        <table class="twelve columns">
+                                            <tr>
+                                                <td style="padding: 10px 20px">
+                                                    <div mc:edit="std_content00">
+                                                        <img style="width: 100%!important" width="580" height="313"
+                                                             src="http://www.paobasketball.co.uk/images/site_assets/pao-logo-kit.jpg">
+                                                    </div>
+                                                </td>
+                                                <td class="expander"></td>
+                                            </tr>
+                                        </table>
+                                        <!-- // End Module: Standard Content \\ -->
 
-                                            <!-- // Begin Module: Standard Content \\ -->
-                                            <table class="twelve columns">
-                                                <tr>
-                                                    <td style="padding: 10px 20px">
-                                                        <div mc:edit="std_content01">
-                                                            <h5>Lorem ipsum dolor sit amet</h5>
-                                                            <h2>Lorem ipsum dolor sit amet</h2>
-                                                            <p>
-                                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac augue a justo molestie mattis.
-                                                                Nulla sed ipsum quam. Fusce lobortis ante ipsum. Proin mollis, orci at sollicitudin dapibus nisi
-                                                                augue faucibus velit, nec ornare mi quam vel lacus.
-                                                            </p>
-                                                        </div>
-                                                    </td>
-                                                    <td class="expander"></td>
-                                                </tr>
-                                            </table>
-                                            <!-- // End Module: Standard Content \\ -->
+                                        <!-- // Begin Module: Standard Content \\ -->
+                                        <table class="twelve columns">
+                                            <tr>
+                                                <td style="padding: 10px 20px">
+                                                    <div mc:edit="std_content01">
+                                                        <h5>Lorem ipsum dolor sit amet</h5>
 
-                                        </td>
-                                    </tr>
-                                </table>
+                                                        <h2>Lorem ipsum dolor sit amet</h2>
 
-                                <br />  <!-- Break Tag for row -->
+                                                        <p>
+                                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+                                                            ac augue a justo molestie mattis.
+                                                            Nulla sed ipsum quam. Fusce lobortis ante ipsum. Proin
+                                                            mollis, orci at sollicitudin dapibus nisi
+                                                            augue faucibus velit, nec ornare mi quam vel lacus.
+                                                        </p>
+                                                    </div>
+                                                </td>
+                                                <td class="expander"></td>
+                                            </tr>
+                                        </table>
+                                        <!-- // End Module: Standard Content \\ -->
 
-                                <table class="row">
-                                    <tr>
-                                        <td class="wrapper last">
+                                    </td>
+                                </tr>
+                            </table>
 
-                                            <!-- // Begin Module: Standard Content \\ -->
-                                            <table class="twelve columns">
-                                                <tr>
-                                                    <td style="padding: 10px 20px 20px 20px">
+                            <br> <!-- Break Tag for row -->
 
-                                                        <table class="twelve columns column-with-padding">
-                                                            <tr>
-                                                                <td class="panel">
-                                                                    <div mc:edit="std_content02">
-                                                                        <h5>Lorem ipsum dolor sit amet</h5>
-                                                                        <h2>Lorem ipsum dolor sit amet</h2>
-                                                                        <p>
-                                                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac augue a justo molestie mattis.
-                                                                            Nulla sed ipsum quam. Fusce lobortis ante ipsum. Proin mollis, orci at sollicitudin dapibus nisi
-                                                                            augue faucibus velit, nec ornare mi quam vel lacus.
-                                                                        </p>
-                                                                    </div>
-                                                                </td>
-                                                                <td class="expander"></td>
-                                                            </tr>
-                                                        </table>
+                            <table class="row">
+                                <tr>
+                                    <td class="wrapper last">
 
-                                                    </td>
-                                                    <td class="expander"></td>
-                                                </tr>
-                                            </table>
-                                            <!-- // End Module: Standard Content \\ -->
+                                        <!-- // Begin Module: Standard Content \\ -->
+                                        <table class="twelve columns">
+                                            <tr>
+                                                <td style="padding: 10px 20px 20px 20px">
 
-                                        </td>
-                                    </tr>
-                                </table>
+                                                    <table class="twelve columns column-with-padding">
+                                                        <tr>
+                                                            <td class="panel">
+                                                                <div mc:edit="std_content02">
+                                                                    <h5>Lorem ipsum dolor sit amet</h5>
 
-                                <!-- container end below -->
-                            </td>
-                        </tr>
-                    </table>
+                                                                    <h2>Lorem ipsum dolor sit amet</h2>
 
-                    <br />
+                                                                    <p>
+                                                                        Lorem ipsum dolor sit amet, consectetur
+                                                                        adipiscing elit. Sed ac augue a justo molestie
+                                                                        mattis.
+                                                                        Nulla sed ipsum quam. Fusce lobortis ante ipsum.
+                                                                        Proin mollis, orci at sollicitudin dapibus nisi
+                                                                        augue faucibus velit, nec ornare mi quam vel
+                                                                        lacus.
+                                                                    </p>
+                                                                </div>
+                                                            </td>
+                                                            <td class="expander"></td>
+                                                        </tr>
+                                                    </table>
 
-                    <table class="container">
-                        <tr>
-                            <td>
-                                <table class="row">
-                                    <tr>
-                                        <td class="wrapper last">
+                                                </td>
+                                                <td class="expander"></td>
+                                            </tr>
+                                        </table>
+                                        <!-- // End Module: Standard Content \\ -->
 
-                                            <table class="twelve columns">
-                                                <tr>
-                                                    <td class="std_social" style="padding: 10px 20px;">
-                                                        <div mc:edit="std_social">
-                                                            &nbsp;<a href="*|TWITTER:PROFILEURL|*">follow on Twitter</a> | <a href="*|FACEBOOK:PROFILEURL|*">friend on Facebook</a> | <a href="*|FORWARD|*">forward to a friend</a>&nbsp;
-                                                        </div>
-                                                    </td>
-                                                    <td class="expander"></td>
-                                                </tr>
-                                            </table>
+                                    </td>
+                                </tr>
+                            </table>
 
-                                        </td>
-                                    </tr>
-                                </table>
-                            </td>
-                        </tr>
-                    </table>
+                            <!-- container end below -->
+                        </td>
+                    </tr>
+                </table>
 
-                    <br />
+                <br>
 
-                    <table class="row footer">
-                        <tr>
-                            <td>
-                                <table class="container">
-                                    <tr>
-                                        <td class="wrapper last">
+                <table class="container">
+                    <tr>
+                        <td>
+                            <table class="row">
+                                <tr>
+                                    <td class="wrapper last">
 
-                                            <table class="twelve columns">
-                                                <tr>
-                                                    <td style="padding: 10px 20px">
-                                                        <div mc:edit="std_footer">
-                                                            *|IF:LIST|*
-                                                            <em>Copyright &copy; *|CURRENT_YEAR|* *|LIST:COMPANY|*, All rights reserved.</em>
-                                                            <br>
-                                                            <!-- *|IFNOT:ARCHIVE_PAGE|* -->
-                                                            *|LIST:DESCRIPTION|*
-                                                            <br>
-                                                            <strong>Our mailing address is:</strong>
-                                                            <br>
-                                                            *|HTML:LIST_ADDRESS_HTML|*
-                                                            <br>
-                                                            <!-- *|END:IF|* -->
-                                                            *|ELSE:|*
-                                                            <!-- *|IFNOT:ARCHIVE_PAGE|* -->
-                                                            <em>Copyright &copy; *|CURRENT_YEAR|* *|USER:COMPANY|*, All rights reserved.</em>
-                                                            <br>
-                                                            <strong>Our mailing address is:</strong>
-                                                            <br>
-                                                            *|USER:ADDRESS_HTML|*
-                                                            <!-- *|END:IF|* -->
-                                                            *|END:IF|*
-                                                        </div>
-                                                    </td>
-                                                    <td class="expander"></td>
-                                                </tr>
-                                            </table>
+                                        <table class="twelve columns">
+                                            <tr>
+                                                <td class="std_social" style="padding: 10px 20px;">
+                                                    <div mc:edit="std_social">
+                                                        &nbsp;<a href="*|TWITTER:PROFILEURL|*">follow on Twitter</a> |
+                                                        <a href="*|FACEBOOK:PROFILEURL|*">friend on Facebook</a> | <a
+                                                        href="*|FORWARD|*">forward to a friend</a>&nbsp;
+                                                    </div>
+                                                </td>
+                                                <td class="expander"></td>
+                                            </tr>
+                                        </table>
 
-                                            <br />
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
 
-                                            <table class="twelve columns">
-                                                <tr>
-                                                    <td style="padding: 10px 20px" class="std_utility">
-                                                        <div mc:edit="std_utility">
-                                                            <a href="*|UNSUB|*">unsubscribe from this list</a> | <a href="*|UPDATE_PROFILE|*">update subscription preferences</a><!-- *|IFNOT:ARCHIVE_PAGE|* --> | <a href="*|ARCHIVE|*">view email in browser</a><!-- *|END:IF|* -->&nbsp;
-                                                        </div>
-                                                    </td>
-                                                    <td class="expander"></td>
-                                                </tr>
-                                            </table>
+                <br>
 
-                                        </td>
-                                        <td class="expander"></td>
-                                    </tr>
-                                </table>
-                            </td>
-                        </tr>
-                    </table>
-                </center>
-            </td>
-        </tr>
-    </table>
+                <table class="row footer">
+                    <tr>
+                        <td>
+                            <table class="container">
+                                <tr>
+                                    <td class="wrapper last">
+
+                                        <table class="twelve columns">
+                                            <tr>
+                                                <td style="padding: 10px 20px">
+                                                    <div mc:edit="std_footer">
+                                                        *|IF:LIST|*
+                                                        <em>Copyright &copy; *|CURRENT_YEAR|* *|LIST:COMPANY|*, All
+                                                            rights reserved.</em>
+                                                        <br>
+                                                        <!-- *|IFNOT:ARCHIVE_PAGE|* -->
+                                                        *|LIST:DESCRIPTION|*
+                                                        <br>
+                                                        <strong>Our mailing address is:</strong>
+                                                        <br>
+                                                        *|HTML:LIST_ADDRESS_HTML|*
+                                                        <br>
+                                                        <!-- *|END:IF|* -->
+                                                        *|ELSE:|*
+                                                        <!-- *|IFNOT:ARCHIVE_PAGE|* -->
+                                                        <em>Copyright &copy; *|CURRENT_YEAR|* *|USER:COMPANY|*, All
+                                                            rights reserved.</em>
+                                                        <br>
+                                                        <strong>Our mailing address is:</strong>
+                                                        <br>
+                                                        *|USER:ADDRESS_HTML|*
+                                                        <!-- *|END:IF|* -->
+                                                        *|END:IF|*
+                                                    </div>
+                                                </td>
+                                                <td class="expander"></td>
+                                            </tr>
+                                        </table>
+
+                                        <br>
+
+                                        <table class="twelve columns">
+                                            <tr>
+                                                <td style="padding: 10px 20px" class="std_utility">
+                                                    <div mc:edit="std_utility">
+                                                        <a href="*|UNSUB|*">unsubscribe from this list</a> | <a
+                                                        href="*|UPDATE_PROFILE|*">update subscription preferences</a><!-- *|IFNOT:ARCHIVE_PAGE|* -->
+                                                        | <a href="*|ARCHIVE|*">view email in browser</a><!-- *|END:IF|* -->
+                                                        &nbsp;
+                                                    </div>
+                                                </td>
+                                                <td class="expander"></td>
+                                            </tr>
+                                        </table>
+
+                                    </td>
+                                    <td class="expander"></td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </center>
+        </td>
+    </tr>
+</table>
 </body>
 </html>
