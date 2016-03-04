@@ -463,15 +463,18 @@ header{
 }
 
 .accordion-navigation {
+    position: relative;
 
     > a {
         letter-spacing: 1px;
+        padding-right: 2.5rem!important;
 
         &:after {
             content: "\25BC";
-            padding-left: 5px;
-            float: right;
-            font-size: 20px;
+            position: absolute;
+            right: 14px;
+            top: 14px;
+            font-size: rem-calc(20);
         }
     }
 
@@ -492,69 +495,6 @@ header{
 
 textarea {
     resize: vertical;
-}
-
-/* -----------------------------------------
-	Pagination
------------------------------------------ */
-
-.paginationHolder {
-	margin-top: rem-calc(30);
-
-	ul{
-		text-align: center;
-
-		li{
-			float: none;
-			display: inline-block;
-			height: auto;
-			margin: 4px 0;
-
-			a {
-				color: $white-color;
-				font-size: rem-calc(12);
-				letter-spacing: 1px;
-				line-height: 1.4;
-				font-family: $alt-font-family;
-				background: none #ccc;
-
-				&:hover, &:focus {
-					color: $white-color;
-					background: none $primary-color;
-				}
-			}
-
-			&.current{
-
-				a{
-					color: $white-color;
-					background: none $main-green;
-					font-weight: normal;
-
-					&:hover, &:focus {
-						color: $white-color;
-						background: none $dark-gray-color;
-					}
-				}
-			}
-		}
-	}
-}
-
-/* -----------------------------------------
-   Sitemap page
------------------------------------------ */
-
-.sitemapList ul{
-}
-
-.sitemapList li{
-}
-
-.sitemapList a, .sitemapList .separator{
-}
-
-.sitemapList ul ul li a{
 }
 
 /* -----------------------------------------
@@ -708,6 +648,10 @@ footer {
     .social {
         text-align: center;
         margin: 0;
+
+        li{
+            margin: 0;
+        }
     }
 
     .logo {
