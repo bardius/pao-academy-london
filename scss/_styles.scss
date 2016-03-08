@@ -452,6 +452,27 @@ header{
     }
 }
 
+.photo-gallery {
+
+    a {
+        margin-bottom: rem-calc(16);
+        display: block;
+        overflow: hidden;
+    }
+}
+
+#photoModal {
+
+    img {
+        display: block;
+        margin: 0 auto;
+    }
+}
+
+.reveal-modal .close-reveal-modal {
+    color: $alt-font-family;
+}
+
 .pricing-table .title {
     letter-spacing: 1px;
 }
@@ -686,6 +707,13 @@ footer {
             }
         }
     }
+
+    .reveal-modal {
+        width: 100% !important;
+        height: 100vh;
+        min-height: 100vh;
+        margin: -100px 0 0 0!important;
+    }
 }
 
 @media #{$medium-down} {
@@ -708,6 +736,12 @@ footer {
             span {
                 display: none;
             }
+        }
+    }
+
+    .reveal-modal {
+        .modalContents {
+            padding-top: 20px;
         }
     }
 }

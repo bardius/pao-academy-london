@@ -36,12 +36,15 @@
         $sliderNavigationItems: $(".slider-navigation a"),
         $toggleTriggerItems: $(".togglerTrigger"),
         $scrollerTriggerItems: $(".scrollToTrigger"),
+        $photoGalleryItems: $(".photo-gallery a"),
+        $photoGalleryModal: $('#photoModal'),
 
         init: function(){
             BARDIS.UI.sliderNavigationFix();
             BARDIS.UI.contentToggler();
             BARDIS.UI.contentScroller();
             BARDIS.UI.fixOffScreenMenu();
+            BARDIS.UI.startGalleryThumbs();
 
             if($('#mapPage').length > 0){
                 BARDIS.mapConfig.mapInit();
@@ -114,8 +117,16 @@
                     scrollTop: 0
                 }, 1);
             });
-        }
+        },
+        startGalleryThumbs: function(){
+            BARDIS.UI.$photoGalleryItems.on('click', function(e) {
+                e.preventDefault();
 
+                var imgSrc = $(this).attr('href');
+                BARDIS.UI.$photoGalleryModal.find(".modalContents").html('<img src="' + imgSrc + '" alt="" />');
+                BARDIS.UI.$photoGalleryModal.foundation('reveal', 'open');
+            });
+        }
     };
 
     BARDIS.mapConfig = {
@@ -292,6 +303,29 @@
                     active_class: 'active', // specify the class used for active (or open) accordion panels
                     multi_expand: false, // allow multiple accordion panels to be active at the same time
                     toggleable: true // allow accordion panels to be closed by clicking on their headers
+                },
+                reveal: {
+                    animation: 'fadeAndPop',
+                    animation_speed: 250,
+                    close_on_background_click: true,
+                    dismiss_modal_class: 'close-reveal-modal',
+                    multiple_opened: false,
+                    bg_class: 'reveal-modal-bg',
+                    root_element: 'body',
+                    on_ajax_error: $.noop,
+                    bg : $('.reveal-modal-bg'),
+                    css : {
+                        open : {
+                            'opacity': 0,
+                            'visibility': 'visible',
+                            'display' : 'block'
+                        },
+                        close : {
+                            'opacity': 1,
+                            'visibility': 'hidden',
+                            'display': 'none'
+                        }
+                    }
                 },
                 orbit: {
                     animation: 'fade', // Sets the type of animation used for transitioning between slides, can also be 'fade' or 'slide'
